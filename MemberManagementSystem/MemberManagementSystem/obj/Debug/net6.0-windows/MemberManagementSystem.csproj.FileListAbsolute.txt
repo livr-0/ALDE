@@ -22,3 +22,27 @@ C:\Users\harry\Documents\GitHub\ALDE\MemberManagementSystem\MemberManagementSyst
 C:\Users\harry\Documents\GitHub\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\ref\MemberManagementSystem.dll
 C:\Users\harry\Documents\GitHub\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\HomeView.g.cs
 C:\Users\harry\Documents\GitHub\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\HomeView.baml
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\bin\Debug\net6.0-windows\MemberManagementSystem.exe
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\bin\Debug\net6.0-windows\MemberManagementSystem.deps.json
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\bin\Debug\net6.0-windows\MemberManagementSystem.runtimeconfig.json
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\bin\Debug\net6.0-windows\MemberManagementSystem.dll
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\bin\Debug\net6.0-windows\MemberManagementSystem.pdb
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.csproj.AssemblyReference.cache
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\HomeView.g.cs
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem_MarkupCompile.cache
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem_MarkupCompile.lref
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\HomeView.baml
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.g.resources
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.AssemblyInfoInputs.cache
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.AssemblyInfo.cs
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.dll
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\refint\MemberManagementSystem.dll
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.pdb
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.genruntimeconfig.cache
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\ref\MemberManagementSystem.dll

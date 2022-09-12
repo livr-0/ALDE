@@ -1,20 +1,20 @@
 ﻿MemberManagementSystem
-1.0.0.0
+
 
 winexe
 C#
 .cs
-C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Release\net6.0-windows\
 MemberManagementSystem
 none
 false
-TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\App.xaml
 2950701851
 
-16-1491176409
+14282333134
 1941905061893
 MainWindow.xaml;View\HomeView.xaml;
 
-False
+True
 

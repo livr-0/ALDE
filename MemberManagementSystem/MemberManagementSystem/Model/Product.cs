@@ -6,18 +6,14 @@ using System.Threading.Tasks;
 
 namespace MemberManagementSystem.Model
 {
-    public class Product
+    public class Product : Record
     {
-        private int _id;
-        private string _name;
         private string _description { get; set; }
         private float _price;
         private int _quantity { get; set; }
 
-        public Product(int id, string name, string desc, float price, int quantity)
+        public Product(int id, string name, string desc, float price, int quantity): base(id, name)
         {
-            _id = id;
-            _name = name;
             _description = desc;
             _price = price;
             _quantity = quantity;
@@ -40,31 +36,6 @@ namespace MemberManagementSystem.Model
         public void NewStock(int num)
         {
             _quantity = _quantity + num;
-        }
-
-        // used to see if the product has same name or ID
-        public bool Conflict(Product p)
-        {
-            if (p != null)
-            {
-                if (_id != p._id && _name != p._name)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        public int ID
-        {
-            get { return _id; }
-        }
-
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
         }
 
         public float Price

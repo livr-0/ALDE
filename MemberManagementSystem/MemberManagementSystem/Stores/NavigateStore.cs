@@ -11,7 +11,7 @@ namespace MemberManagementSystem.Stores
     /// The Navigation Store holds the current viewModel that is active this also therefore determines the current view
     /// Changeing the CurrentViewModel Property Directly is bad practice instead use the Navigation Service
     /// </summary>
-    internal class NavigationStore
+    internal class NavigateStore
     {
         private ViewModelBase _currentViewModel;
         /// <summary>

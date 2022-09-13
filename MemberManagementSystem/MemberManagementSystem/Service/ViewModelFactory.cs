@@ -1,4 +1,5 @@
-﻿using MemberManagementSystem.ViewModel;
+﻿using MemberManagementSystem.Model;
+using MemberManagementSystem.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +14,18 @@ namespace MemberManagementSystem.Service
     /// </summary>
     internal class ViewModelFactory
     {
+        private NavigateService _navService;
+        private Book<Member> _memberBook;
+        private Book<Product> _productBook;
+
         /// <summary>
         /// Any paramters that may be needed for a new viewmodel needto be passed into ViewModelFacotryConstructed
         /// </summary>
-        public ViewModelFactory()
+        public ViewModelFactory(NavigateService navService, Book<Member> memberBook, Book<Product> productBook)
         {
-
+            _navService = navService;
+            _memberBook = memberBook;   
+            _productBook = productBook;
         }
 
         /// <summary>
@@ -33,14 +40,27 @@ namespace MemberManagementSystem.Service
             {
                 case nameof(HomeViewModel):
                     return CreateHomeViewModel();
+                case nameof(AddMemberViewModel):
+                    return CreateAddMemberViewModel();
+                case nameof(AddProductViewModel):
+                    return CreateAddProductViewModel();
             }
 
             throw new ArgumentException(String.Format("{0} is not a type of creatable viewmodel", viewModelName));
         }
 
+        private ViewModelBase CreateAddMemberViewModel()
+        {
+            return new AddMemberViewModel(_navService, _memberBook);
+        }
+        private ViewModelBase CreateAddProductViewModel()
+        {
+            return new AddProductViewModel(_navService, _productBook);
+        }
+
         private ViewModelBase CreateHomeViewModel()
         {
-            return new HomeViewModel();
+            return new HomeViewModel(_navService);
         }
     }
 }

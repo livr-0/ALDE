@@ -8,14 +8,31 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="This will be the overview wher you can choose to add/edit/delte records and be directed to proper page or go to report pages"/>
-        <Label Grid.Row="1" Content="There will be a bunch of buttons here with Navigate Commands to change the active viewmdoel to the correct one"/>
-        <Label Grid.Row="2" Content="It is likley that before seeing this page the user needsto log in first thus the line in App.xaml.cs that sent the first datacontext will need to be change tothe login viewmodel"/>
-        <Label Grid.Row="3" Content="Additionally whenever creating a new viewmodel and view rmember to go to the mainwindow xaml to update the Grid Resources with a new DataTemplate"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Center" Content="Home View Page"/>
+        <Label Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Center" Content="Add Records"/>
+        <Label Grid.Row="1" Grid.Column="4" HorizontalContentAlignment="Center" Content="View Records"/>
+        <Button Grid.Row="3" Grid.Column="0" Content="Add Member" Command="{Binding AddMemberPage}"/>
+        <Button Grid.Row="5" Grid.Column="0" Content="Add Sales" Command="{Binding AddSalesPage}"/>
+        <Button Grid.Row="7" Grid.Column="0" Content="Add Product" Command="{Binding AddProductPage}"/>
+        <Button Grid.Row="3" Grid.Column="4" Content="View Member" Command="{Binding ViewMemberPage}"/>
+        <Button Grid.Row="5" Grid.Column="4" Content="View Sales" Command="{Binding ViewSalesPage}"/>
+        <Button Grid.Row="7" Grid.Column="4" Content="View Product" Command="{Binding ViewProductPage}"/>
+
     </Grid>
 </UserControl>

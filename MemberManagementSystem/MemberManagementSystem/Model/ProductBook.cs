@@ -8,6 +8,7 @@ namespace MemberManagementSystem.Model
 {
     // ProductBook
     // A class for keeping track of current products
+    // can use generic book instead
     public class ProductBook
     {
         private List<Product> _products;
@@ -25,6 +26,7 @@ namespace MemberManagementSystem.Model
                 if (existingProduct.Conflict(newP))
                 {
                     isNew = false;
+                    break;
                 }
             }
 

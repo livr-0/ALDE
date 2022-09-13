@@ -8,15 +8,19 @@ using System.Threading.Tasks;
 
 namespace MemberManagementSystem.Service
 {
-    internal class NavigationService
+    internal class NavigateService
     {
-        private readonly NavigationStore _navigationStore;
-        private readonly ViewModelFactory _creator;
+        private readonly NavigateStore _navigationStore;
+        private ViewModelFactory _creator;
 
-        public NavigationService(NavigationStore navigationStore, ViewModelFactory creator)
+        public ViewModelFactory Creator
+        {
+            set { _creator = value; }
+        }
+
+        public NavigateService(NavigateStore navigationStore)
         {
             _navigationStore = navigationStore;
-            _creator = creator;
         }
 
         /// <summary>

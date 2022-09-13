@@ -1,4 +1,5 @@
-﻿using MemberManagementSystem.Stores;
+﻿using MemberManagementSystem.Model;
+using MemberManagementSystem.Stores;
 using MemberManagementSystem.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -16,18 +17,25 @@ namespace MemberManagementSystem
     /// </summary>
     public partial class App : Application
     {
-        private readonly NavigationStore _navStore;
-        private readonly Service.NavigationService _navService;
+        private static int _id = 0;
+        public static int ID { get { _id++;  return _id; } }
+
+        private readonly NavigateStore _navStore;
+        private readonly Service.NavigateService _navService;
         private readonly Service.ViewModelFactory _factory;
 
         public App()
         {
             //Creation of Models
+            Book<Member> memberBook = new Book<Member>();
+            Book<Product> productBook = new Book<Product>();
 
-            //Creation of Stores and Services
-            _factory = new Service.ViewModelFactory();
-            _navStore = new NavigationStore();
-            _navService = new Service.NavigationService(_navStore, _factory);
+            //Creation of Stores and Services            
+            _navStore = new NavigateStore();
+            _navService = new Service.NavigateService(_navStore);
+            _factory = new Service.ViewModelFactory(_navService, memberBook, productBook);
+            _navService.Creator = _factory;
+            
         }
 
 

@@ -13,11 +13,11 @@ namespace MemberManagementSystem.ViewModel
     /// </summary>
     internal class MainViewModel : ViewModelBase
     {
-        private readonly NavigationStore _navigationStore;
+        private readonly NavigateStore _navigationStore;
         public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
 
 
-        public MainViewModel(NavigationStore navigationStore)
+        public MainViewModel(NavigateStore navigationStore)
         {
             _navigationStore = navigationStore;
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;

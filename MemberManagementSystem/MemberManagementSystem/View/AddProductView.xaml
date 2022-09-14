@@ -56,7 +56,7 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Price"/>
-            <TextBox Grid.Column="1" Width="135" Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Width="135" PreviewTextInput="PriceOnly" Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
         <Grid Grid.Row="9">
             <Grid.ColumnDefinitions>
@@ -64,7 +64,7 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Quantity"/>
-            <TextBox Grid.Column="1" Width="135" Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Width="135" PreviewTextInput="NumberOnly" Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
         <Button Grid.Row="11" Content="Submit" Command="{Binding SubmitProduct}"/>
 

@@ -54,5 +54,22 @@ namespace MemberManagementSystem.Model
             get { return _description; }
             set { _description = value; }
         }
+
+        // may be used to save for csv
+        public override string ToString()
+        {
+            string returnString = ID.ToString() + ',';
+            returnString += Name + ',';
+            if (_description.Contains(','))
+            {
+                returnString += '"' + _description + '"' + ',';
+            }
+            {
+                returnString += _description + ',';
+            }
+            returnString += string.Format("${0,12:C2},", _price);
+            returnString += _quantity.ToString();
+            return returnString;
+        }
     }
 }

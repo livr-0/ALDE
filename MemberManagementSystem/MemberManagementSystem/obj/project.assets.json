@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\harry\\.nuget\\packages\\": {}
+    "C:\\Users\\Andy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\harry\\Documents\\GitHub\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
+      "projectUniqueName": "C:\\Users\\Andy\\Documents\\sWINBURNE sOFTWARE eNG\\Year 2 Semester 2\\SWE20001 Managing Software Projects\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
       "projectName": "MemberManagementSystem",
-      "projectPath": "C:\\Users\\harry\\Documents\\GitHub\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
-      "packagesPath": "C:\\Users\\harry\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\harry\\Documents\\GitHub\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\",
+      "projectPath": "C:\\Users\\Andy\\Documents\\sWINBURNE sOFTWARE eNG\\Year 2 Semester 2\\SWE20001 Managing Software Projects\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
+      "packagesPath": "C:\\Users\\Andy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Andy\\Documents\\sWINBURNE sOFTWARE eNG\\Year 2 Semester 2\\SWE20001 Managing Software Projects\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\harry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Andy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

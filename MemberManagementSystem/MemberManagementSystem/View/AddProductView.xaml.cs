@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace MemberManagementSystem.View
 {
@@ -23,6 +24,20 @@ namespace MemberManagementSystem.View
         public AddProductView()
         {
             InitializeComponent();
+        }
+
+        // numbers only
+        private void NumberOnly(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        // try to allow price format, eg. 6, 5.1, 5.20
+        private void PriceOnly(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("^[0-9]*('\'.[0-9]{0,2})?$");
+            e.Handled = !regex.IsMatch(e.Text);
         }
     }
 }

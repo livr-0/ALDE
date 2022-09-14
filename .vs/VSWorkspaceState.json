@@ -3,9 +3,14 @@
     "",
     "\\MemberManagementSystem",
     "\\MemberManagementSystem\\MemberManagementSystem",
+    "\\MemberManagementSystem\\MemberManagementSystem\\bin",
+    "\\MemberManagementSystem\\MemberManagementSystem\\Commands",
     "\\MemberManagementSystem\\MemberManagementSystem\\Model",
-    "\\MemberManagementSystem\\MemberManagementSystem\\Service"
+    "\\MemberManagementSystem\\MemberManagementSystem\\Service",
+    "\\MemberManagementSystem\\MemberManagementSystem\\Stores",
+    "\\MemberManagementSystem\\MemberManagementSystem\\View",
+    "\\MemberManagementSystem\\MemberManagementSystem\\ViewModel"
   ],
-  "SelectedNode": "\\MemberManagementSystem\\MemberManagementSystem\\Model\\Product.cs",
+  "SelectedNode": "\\MemberManagementSystem\\MemberManagementSystem\\Commands\\AddRecordCommand.cs",
   "PreviewInSolutionExplorer": false
 }

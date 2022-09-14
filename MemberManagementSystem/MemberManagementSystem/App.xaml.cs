@@ -30,6 +30,47 @@ namespace MemberManagementSystem
             Book<Member> memberBook = new Book<Member>();
             Book<Product> productBook = new Book<Product>();
 
+            //reading in product database
+            try
+            {
+                string[] productsCSV = System.IO.File.ReadAllLines("../Database/ProductDatabase.csv");
+
+                foreach (string productCSV in productsCSV)
+                {
+                    if (productsCSV[0] != productCSV)
+                    {
+                        string[] productDetails = productCSV.Split(',');
+                        int num = Int32.Parse(productDetails[0]);
+
+                        // incase a description has a comma
+                        string desc = productDetails[2].Substring(1);
+                        int currentIndex = 2;
+                        if (productDetails[2][0] == '"')
+                        {
+                            for (int i = 3; i < productDetails.Length; i++)
+                            {
+                                desc += productDetails[i];
+                                currentIndex++;
+                                if (productDetails[i].EndsWith('"'))
+                                {
+                                    desc = desc.Substring(0, desc.Length - 1);
+                                    break;
+                                }
+                            }
+                        }
+
+                        float price = float.Parse(productDetails[currentIndex + 1].Substring(1));
+                        int quantity = Int32.Parse(productDetails[currentIndex + 2]);
+
+                        productBook.AddRecord(new Product(num, productDetails[1], desc, price, quantity));
+                    }
+                }
+            }
+            catch (System.IO.IOException e)
+            {
+                Console.WriteLine("file not found");
+            }
+
             //Creation of Stores and Services            
             _navStore = new NavigateStore();
             _navService = new Service.NavigateService(_navStore);

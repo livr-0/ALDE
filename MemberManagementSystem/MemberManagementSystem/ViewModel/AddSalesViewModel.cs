@@ -42,7 +42,7 @@ namespace MemberManagementSystem.ViewModel
 
 
 
-        public AddProductViewModel(NavigateService navService, Book<Sales> salesBook)
+        public AddSalesViewModel(NavigateService navService, Book<Sales> salesBook)
         {
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
             SubmitSales = new AddRecordCommand<Sales>(salesBook, CreateSales);

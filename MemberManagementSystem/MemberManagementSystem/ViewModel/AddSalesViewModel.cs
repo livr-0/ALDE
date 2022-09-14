@@ -45,7 +45,7 @@ namespace MemberManagementSystem.ViewModel
         public AddProductViewModel(NavigateService navService, Book<Sales> salesBook)
         {
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
-            SubmitProduct = new AddRecordCommand<Sales>(salesBook, CreateSales);
+            SubmitSales = new AddRecordCommand<Sales>(salesBook, CreateSales);
         }
 
 

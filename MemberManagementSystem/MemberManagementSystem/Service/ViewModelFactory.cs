@@ -18,14 +18,17 @@ namespace MemberManagementSystem.Service
         private Book<Member> _memberBook;
         private Book<Product> _productBook;
 
+        private Book<Sales> _salesBook;
+
         /// <summary>
         /// Any paramters that may be needed for a new viewmodel needto be passed into ViewModelFacotryConstructed
         /// </summary>
-        public ViewModelFactory(NavigateService navService, Book<Member> memberBook, Book<Product> productBook)
+        public ViewModelFactory(NavigateService navService, Book<Member> memberBook, Book<Product> productBook, Book<Sales> salesBook)
         {
             _navService = navService;
             _memberBook = memberBook;   
             _productBook = productBook;
+            _salesBook = salesBook;
         }
 
         /// <summary>
@@ -44,6 +47,8 @@ namespace MemberManagementSystem.Service
                     return CreateAddMemberViewModel();
                 case nameof(AddProductViewModel):
                     return CreateAddProductViewModel();
+                case nameof(AddSalesViewModel):
+                    return CreateAddSalesViewModel();
             }
 
             throw new ArgumentException(String.Format("{0} is not a type of creatable viewmodel", viewModelName));
@@ -56,6 +61,10 @@ namespace MemberManagementSystem.Service
         private ViewModelBase CreateAddProductViewModel()
         {
             return new AddProductViewModel(_navService, _productBook);
+        }
+
+        private ViewModelBase CreateAddSalesViewModel() {
+            return new AddSalesViewModel(_navService, _salesBook);
         }
 
         private ViewModelBase CreateHomeViewModel()

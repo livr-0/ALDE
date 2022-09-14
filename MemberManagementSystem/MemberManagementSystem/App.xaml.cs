@@ -29,11 +29,12 @@ namespace MemberManagementSystem
             //Creation of Models
             Book<Member> memberBook = new Book<Member>();
             Book<Product> productBook = new Book<Product>();
+            Book<Sales> salesBook = new Book<Sales>();
 
             //Creation of Stores and Services            
             _navStore = new NavigateStore();
             _navService = new Service.NavigateService(_navStore);
-            _factory = new Service.ViewModelFactory(_navService, memberBook, productBook);
+            _factory = new Service.ViewModelFactory(_navService, memberBook, productBook, salesBook);
             _navService.Creator = _factory;
             
         }

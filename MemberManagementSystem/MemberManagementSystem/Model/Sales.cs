@@ -10,20 +10,16 @@ namespace MemberManagementSystem.Model
     {
         private string _productID;
         private string _memberID;
-        private int _ID;
         private string _dateTime;
         private int _quantity;
 
         public Sales(int id, string productID, string memberID, string dateTime, int quantity) : base(id, "sales") // Dummy name, flag for changing base's props
         {
-            _ID = id;
             _productID = productID;
             _memberID = memberID;
             _dateTime = dateTime;
             _quantity = quantity;
         }
-
-        public int ID { get => _ID; }
 
         public string ProductID { get => _productID; set => _productID = value; }
 

@@ -26,6 +26,9 @@ namespace MemberManagementSystem
 
         public App()
         {
+
+
+
             //Creation of Models
             try
             {

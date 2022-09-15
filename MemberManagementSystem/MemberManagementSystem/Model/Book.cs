@@ -67,7 +67,6 @@ namespace MemberManagementSystem.Model
             Book<T> book = new Book<T>();
 
             StreamReader sr = new StreamReader(filePath);
-            string header = sr.ReadLine();
             while (true)
             {
                 string line = sr.ReadLine();

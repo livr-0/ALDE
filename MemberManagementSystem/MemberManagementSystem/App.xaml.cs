@@ -109,7 +109,7 @@ namespace MemberManagementSystem
 //    Console.WriteLine("file not found");
 //}
 
-////reading in product database
+////reading in sales database
 //try
 //{
 //    string[] salesDatabase = System.IO.File.ReadAllLines("../Database/SalesDatabase.csv");

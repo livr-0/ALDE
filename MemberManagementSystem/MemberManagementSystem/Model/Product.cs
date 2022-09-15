@@ -74,27 +74,32 @@ namespace MemberManagementSystem.Model
 
         public new static Record LoadFromLine(string line)
         {
-            bool opened = false;
-            int i = 0;
-            string[] parts = new string[4];
-            string str = "";
-            foreach (char c in line)
+            string productCSV = line;
+            string[] productDetails = productCSV.Split(',');
+            int num = Int32.Parse(productDetails[0]);
+
+            // incase a description has a comma
+            string desc = productDetails[2].Substring(1);
+            int currentIndex = 2;
+            if (productDetails[2][0] == '"')
             {
-                
-                if(c == '"') { opened = !opened; continue; }
-                if (!opened)
+                for (int i = 3; i < productDetails.Length; i++)
                 {
-                    if(c == ',')
+                    desc += productDetails[i];
+                    currentIndex++;
+                    if (productDetails[i].EndsWith('"'))
                     {
-                        parts[i] = str;
-                        i++;
-                        str = "";
-                        continue;
+                        desc = desc.Substring(0, desc.Length - 1);
+                        break;
                     }
                 }
-                str += c;
             }
-            return new Product(int.Parse(parts[0]), parts[1], parts[2],float.Parse(parts[3]),int.Parse(parts[4]));
+
+            float price = float.Parse(productDetails[currentIndex + 1].Substring(1));
+            int quantity = Int32.Parse(productDetails[currentIndex + 2]);
+
+           return new Product(num, productDetails[1], desc, price, quantity);
+            
         }
     }
 }

@@ -108,3 +108,27 @@ namespace MemberManagementSystem
 //{
 //    Console.WriteLine("file not found");
 //}
+
+////reading in product database
+//try
+//{
+//    string[] salesDatabase = System.IO.File.ReadAllLines("../Database/SalesDatabase.csv");
+//    foreach (string record in salesDatabase)
+//    {
+//        if (salesDatabase[0] != salesDatabase)
+//        {
+//            string[] salesAttributes = record.Split(',');
+//            int ID = Int32.Parse(salesAttributes[0]);
+//            int productID = Int32.Parse(salesAttributes[1]);
+//            int memberID = Int32.Parse(salesAttributes[2]);
+//            int dateTime = salesAttributes[3];
+//            int quantity = Int32.Parse(productDetails[4]);
+
+//            salesBook.AddRecord(new Sales(ID, productID, memberID, dateTime, quantity));
+//        }
+//    }
+//}
+//catch (System.IO.IOException e)
+//{
+//    Console.WriteLine("file not found");
+//}

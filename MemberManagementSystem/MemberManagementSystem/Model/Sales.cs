@@ -13,7 +13,7 @@ namespace MemberManagementSystem.Model
         private string _dateTime;
         private int _quantity;
 
-        public Sales(int id, string productID, string memberID, string dateTime, int quantity) : base(id, "sales") // Dummy name, flag for changing base's props
+        public Sales(int id, string productID, string memberID, string dateTime, int quantity) : base(id, id) // WARNING: Potential debt
         {
             _productID = productID;
             _memberID = memberID;

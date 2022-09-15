@@ -10,7 +10,6 @@ namespace MemberManagementSystem.Model
     {
         private string _email{ get; set; }
         private string _phone;
-        private List<int> _salesRecordIDs;
 
 
 
@@ -18,34 +17,33 @@ namespace MemberManagementSystem.Model
         {
             _email = email;
             _phone = phone;
-            List<int> _salesRecords = new List<int>();
         }
 
-        public void AddSale(int saleID)
-        {
-            bool isNew = true;
-            foreach (int existingSaleID in _salesRecordIDs)
-            {
-                if (existingSaleID == saleID)
-                {
-                    isNew = false;
-                    break;
-                }
-            }
+        //public void AddSale(int saleID)
+        //{
+        //    bool isNew = true;
+        //    foreach (int existingSaleID in _salesRecordIDs)
+        //    {
+        //        if (existingSaleID == saleID)
+        //        {
+        //            isNew = false;
+        //            break;
+        //        }
+        //    }
 
-            if (isNew)
-            {
-                _salesRecordIDs.Add(saleID);
-            }
-        }
+        //    if (isNew)
+        //    {
+        //        _salesRecordIDs.Add(saleID);
+        //    }
+        //}
 
-        public void RemoveSale(int saleID)
-        {
-            if (_salesRecordIDs.Contains(saleID))
-            {
-                _salesRecordIDs.Remove(saleID);
-            }
-        }
+        //public void RemoveSale(int saleID)
+        //{
+        //    if (_salesRecordIDs.Contains(saleID))
+        //    {
+        //        _salesRecordIDs.Remove(saleID);
+        //    }
+        //}
 
         public string Email
         {
@@ -59,6 +57,22 @@ namespace MemberManagementSystem.Model
             set { _phone = value; }
         }
 
-        public IEnumerable<int> SalesRecordIDs => _salesRecordIDs;
+        //public IEnumerable<int> SalesRecordIDs => _salesRecordIDs;
+
+        public new static Record LoadFromLine(string line)
+        {
+            string[] parts = line.Split(',');
+            return new Member(int.Parse(parts[0]), parts[1],parts[2],parts[3]);
+        }
+
+        // may be used to save for csv
+        public override string ToString()
+        {
+            string returnString = ID.ToString() + ',';
+            returnString += Name + ',';
+            returnString += _email + ',';
+            returnString += _phone + ',';
+            return returnString;
+        }
     }
 }

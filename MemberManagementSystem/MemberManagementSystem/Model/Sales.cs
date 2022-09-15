@@ -13,7 +13,7 @@ namespace MemberManagementSystem.Model
         private string _dateTime;
         private int _quantity;
 
-        public Sales(int id, string productID, string memberID, string dateTime, int quantity) : base(id, id) // WARNING: Potential debt
+        public Sales(int id, string productID, string memberID, string dateTime, int quantity) : base(id, id.ToString()) // WARNING: Potential debt
         {
             _productID = productID;
             _memberID = memberID;
@@ -28,5 +28,22 @@ namespace MemberManagementSystem.Model
         public string DateTime { get => _dateTime; set => _dateTime = value; }
 
         public int Quantity { get => _quantity; set => _quantity = value; }
+
+        // may be used to save for csv
+        public override string ToString()
+        {
+            string returnString = ID.ToString() + ',';
+            returnString += ProductID.ToString() + ',';
+            returnString += MemberID.ToString() + ',';
+            returnString += DateTime + ',';
+            returnString += Quantity.ToString() + ',';
+            return returnString;
+        }
+
+        public new static Record LoadFromLine(string line)
+        {
+            string[] parts = line.Split(',');
+            return new Sales(int.Parse(parts[0]), parts[1], parts[2], parts[3], int.Parse(parts[4]));
+        }
     }
 }

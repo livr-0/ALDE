@@ -26,5 +26,12 @@ namespace MemberManagementSystem.Model
 
             return false;
         }
+
+        public static Record LoadFromLine(string line)
+        {
+            string[] parts = line.Split(',');
+            return new Record(int.Parse(parts[0]), parts[1]);
+        }
+
     }
 }

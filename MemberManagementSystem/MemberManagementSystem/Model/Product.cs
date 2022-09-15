@@ -71,5 +71,30 @@ namespace MemberManagementSystem.Model
             returnString += _quantity.ToString();
             return returnString;
         }
+
+        public new static Record LoadFromLine(string line)
+        {
+            bool opened = false;
+            int i = 0;
+            string[] parts = new string[4];
+            string str = "";
+            foreach (char c in line)
+            {
+                
+                if(c == '"') { opened = !opened; continue; }
+                if (!opened)
+                {
+                    if(c == ',')
+                    {
+                        parts[i] = str;
+                        i++;
+                        str = "";
+                        continue;
+                    }
+                }
+                str += c;
+            }
+            return new Product(int.Parse(parts[0]), parts[1], parts[2],float.Parse(parts[3]),int.Parse(parts[4]));
+        }
     }
 }

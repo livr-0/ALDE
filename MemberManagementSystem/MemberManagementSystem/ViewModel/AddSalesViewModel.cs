@@ -6,7 +6,7 @@ using System.Windows.Input;
 
 namespace MemberManagementSystem.ViewModel
 {
-    internal class AddProductViewModel : ViewModelBase
+    internal class AddSalesViewModel : ViewModelBase
     {
         private string _productID;
 
@@ -32,9 +32,9 @@ namespace MemberManagementSystem.ViewModel
             set { _dateTime = value; OnPropertyChanged(nameof(DateTime)); }
         }
 
-        private int _quantity;
+        private string _quantity;
 
-        public int Quantity
+        public string Quantity
         {
             get { return _quantity; }
             set { _quantity = value; OnPropertyChanged(nameof(Quantity)); }
@@ -53,10 +53,10 @@ namespace MemberManagementSystem.ViewModel
         public ICommand HomePage { get; }
         public ICommand SubmitSales { get; }
 
-        private Product CreateSales()
+        private Sales CreateSales()
         {
             int quantity = int.Parse(Quantity);
-            return new Product(App.ID, ProductID, MemberID, DateTime, quantity);
+            return new Sales(App.ID, ProductID, MemberID, DateTime, quantity);
         }
     }
 }

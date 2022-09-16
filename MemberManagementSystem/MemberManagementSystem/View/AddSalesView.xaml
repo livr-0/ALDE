@@ -1,4 +1,4 @@
-<UserControl x:Class="MemberManagementSystem.View.AddProductView"
+<UserControl x:Class="MemberManagementSystem.View.AddSalesView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -56,7 +56,7 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter DateTime"/>
-            <TextBox Grid.Column="1" Width="135" PreviewTextInpust="DateTimeOnly" Text="{Binding DateTime, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Width="135" PreviewTextInput="DateTimeOnly" Text="{Binding DateTime, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
         <Grid Grid.Row="9">
             <Grid.ColumnDefinitions>

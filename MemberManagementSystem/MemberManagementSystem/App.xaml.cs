@@ -32,9 +32,9 @@ namespace MemberManagementSystem
             //Creation of Models
             try
             {
-                Book<Member> memberBook = Book<Member>.LoadBook("../Database/MemberDatabase.csv");
-                Book<Product> productBook = Book<Product>.LoadBook("../Database/ProductDatabase.csv");
-                Book<Sales> salesBook = Book<Sales>.LoadBook("../Database/SalesDatabase.csv");
+                Book<Member> memberBook = Book<Member>.LoadBook("../../../Database/MemberDatabase.csv");
+                Book<Product> productBook = Book<Product>.LoadBook("../../../Database/ProductDatabase.csv");
+                Book<Sales> salesBook = Book<Sales>.LoadBook("../../../Database/SalesDatabase.csv");
                 //Creation of Stores and Services            
                 _navStore = new NavigateStore();
                 _navService = new Service.NavigateService(_navStore);

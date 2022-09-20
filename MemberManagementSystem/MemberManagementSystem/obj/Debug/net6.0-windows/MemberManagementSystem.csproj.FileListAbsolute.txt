@@ -94,3 +94,39 @@ C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managi
 C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\ViewSalesView.baml
 C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\ViewProductView.g.cs
 C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\ViewProductView.baml
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.csproj.AssemblyReference.cache
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\AddMemberView.g.cs
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\AddProductView.g.cs
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\AddSalesView.g.cs
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\HomeView.g.cs
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\ViewProductView.g.cs
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\ViewSalesView.g.cs
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem_MarkupCompile.cache
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem_MarkupCompile.lref
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\AddMemberView.baml
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\AddProductView.baml
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\AddSalesView.baml
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\HomeView.baml
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\ViewProductView.baml
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\ViewSalesView.baml
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.dll
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\refint\MemberManagementSystem.dll
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.pdb
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\bin\Debug\net6.0-windows\MemberManagementSystem.exe
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\bin\Debug\net6.0-windows\MemberManagementSystem.deps.json
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\bin\Debug\net6.0-windows\MemberManagementSystem.runtimeconfig.json
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\bin\Debug\net6.0-windows\MemberManagementSystem.dll
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\bin\Debug\net6.0-windows\MemberManagementSystem.pdb
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\ViewMemberView.g.cs
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\ViewMemberView.baml
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.g.resources
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.AssemblyInfoInputs.cache
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.AssemblyInfo.cs
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.genruntimeconfig.cache
+C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\ref\MemberManagementSystem.dll

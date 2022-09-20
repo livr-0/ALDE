@@ -130,3 +130,5 @@ C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\o
 C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.csproj.CoreCompileInputs.cache
 C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.genruntimeconfig.cache
 C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\ref\MemberManagementSystem.dll
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\ViewMemberView.g.cs
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\ViewMemberView.baml

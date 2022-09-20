@@ -10,6 +10,7 @@ namespace MemberManagementSystem.Model
     internal class Book<T> where T : Record
     {
         private List<T> _records;
+        public IEnumerable<T> Records => _records;
 
         public Book()
         {

@@ -17,6 +17,12 @@
             <DataTemplate DataType="{x:Type vm:AddProductViewModel}">
                 <view:AddProductView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:AddSalesViewModel}">
+                <view:AddSalesView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:ViewSalesViewModel}">
+                <view:ViewSalesView/>
+            </DataTemplate>
         </Grid.Resources>
         <ContentControl Content="{Binding CurrentViewModel}"/>
     </Grid>

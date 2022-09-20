@@ -17,7 +17,7 @@ namespace MemberManagementSystem
     /// </summary>
     public partial class App : Application
     {
-        private static int _id = 0;
+        private static int _id = 100;
         public static int ID { get { _id++;  return _id; } }
 
         private readonly NavigateStore _navStore;

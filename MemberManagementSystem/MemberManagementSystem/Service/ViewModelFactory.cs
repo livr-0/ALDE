@@ -49,9 +49,16 @@ namespace MemberManagementSystem.Service
                     return CreateAddProductViewModel();
                 case nameof(AddSalesViewModel):
                     return CreateAddSalesViewModel();
+                case nameof(ViewSalesViewModel):
+                    return CreateViewSalesViewModel();
             }
 
             throw new ArgumentException(String.Format("{0} is not a type of creatable viewmodel", viewModelName));
+        }
+
+        private ViewModelBase CreateViewSalesViewModel()
+        {
+            return new ViewSalesViewModel(_salesBook, _navService);
         }
 
         private ViewModelBase CreateAddMemberViewModel()

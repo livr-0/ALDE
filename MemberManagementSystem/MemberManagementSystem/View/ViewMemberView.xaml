@@ -25,7 +25,7 @@
                     <GridViewColumn Header="ID">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock HorizontalAlignment="Center" Text="{Binding MemberID}" />
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding ID}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

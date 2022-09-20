@@ -52,6 +52,11 @@ namespace MemberManagementSystem.Model
         {
             return _records.Where(_record => _record.ID == id);
         }
+        public T GetSingleRecord(int id)
+        {
+            IEnumerable<T> records = GetRecord(id);
+            return records.First<T>();
+        }
 
         public void SaveBook(string filepath)
         {

@@ -11,18 +11,23 @@ namespace MemberManagementSystem.ViewModel
     internal class ViewSalesViewModel : ViewModelBase
     {
         Book<Sales> _salesBook;
+        Book<Product> _productBook;
+        Book<Member> _memberBook;
 
         private ObservableCollection<SalesViewModel> _sales;
         public IEnumerable<SalesViewModel> Sales => _sales;
 
         public ICommand HomePage { get; }
 
-        public ViewSalesViewModel(Book<Sales> salesBook, NavigateService navService)
+        public ViewSalesViewModel(Book<Sales> salesBook, NavigateService navService, Book<Member> memberBook, Book<Product> productBook)
         {
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
             _salesBook = salesBook;
             _sales = new ObservableCollection<SalesViewModel>();
+            _memberBook = memberBook;
+            _productBook = productBook;
             GatherSalesViews(salesBook);
+            
         }
 
         private void GatherSalesViews(Book<Sales> saleBook)
@@ -31,7 +36,7 @@ namespace MemberManagementSystem.ViewModel
             IEnumerable<Sales> sales = saleBook.Records;
             foreach(Sales sale in sales)
             {
-                _sales.Add(new SalesViewModel(sale));
+                _sales.Add(new SalesViewModel(sale, _memberBook, _productBook));
             }
         }
 

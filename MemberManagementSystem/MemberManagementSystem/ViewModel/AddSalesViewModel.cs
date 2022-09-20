@@ -56,7 +56,7 @@ namespace MemberManagementSystem.ViewModel
         private Sales CreateSales()
         {
             int quantity = int.Parse(Quantity);
-            return new Sales(App.ID, ProductID, MemberID, DateTime, quantity);
+            return new Sales(App.ID, int.Parse(ProductID), int.Parse(MemberID), DateTime, quantity);
         }
     }
 }

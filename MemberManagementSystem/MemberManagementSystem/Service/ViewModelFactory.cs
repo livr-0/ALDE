@@ -62,7 +62,7 @@ namespace MemberManagementSystem.Service
 
         private ViewModelBase CreateViewSalesViewModel()
         {
-            return new ViewSalesViewModel(_salesBook, _navService);
+            return new ViewSalesViewModel(_salesBook, _navService, _memberBook, _productBook);
         }
         private ViewModelBase CreateViewMemberViewModel()
         {

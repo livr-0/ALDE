@@ -79,10 +79,11 @@ namespace MemberManagementSystem.Model
             int num = Int32.Parse(productDetails[0]);
 
             // incase a description has a comma
-            string desc = productDetails[2].Substring(1);
+            string desc = productDetails[2];
             int currentIndex = 2;
             if (productDetails[2][0] == '"')
             {
+                desc = productDetails[2].Substring(1);
                 for (int i = 3; i < productDetails.Length; i++)
                 {
                     desc += productDetails[i];

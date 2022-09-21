@@ -36,8 +36,13 @@ namespace MemberManagementSystem.Model
             returnString += ProductID.ToString() + ',';
             returnString += MemberID.ToString() + ',';
             returnString += DateTime + ',';
-            returnString += Quantity.ToString() + ',';
+            returnString += Quantity.ToString();
             return returnString;
+        }
+
+        public static string GetHeader()
+        {
+            return String.Format("{0},{1},{2},{3},{4},", nameof(ID),nameof(ProductID),nameof(MemberID),nameof(DateTime),nameof(Quantity));
         }
 
         public new static Record LoadFromLine(string line)

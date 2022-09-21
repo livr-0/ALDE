@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,16 @@ namespace MemberManagementSystem
     /// </summary>
     public partial class MainWindow : Window
     {
+        public event EventHandler WindowClosing;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public void OnClose(object sender, CancelEventArgs e)
+        {
+            WindowClosing?.Invoke(this, e);
+
         }
     }
 }

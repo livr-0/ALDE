@@ -7,9 +7,9 @@ namespace MemberManagementSystem.ViewModel
 {
     internal class AddMemberViewModel : ViewModelBase
     {
+        private Book<Member> _memberBook;
 
         private string _name;
-
         public string Name
         {
             get { return _name; }
@@ -33,6 +33,7 @@ namespace MemberManagementSystem.ViewModel
 
         public AddMemberViewModel(NavigateService navService, Book<Member> memberBook)
         {
+            _memberBook = memberBook;
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
             SubmitMember = new AddRecordCommand<Member>(memberBook, CreateMember);
         }
@@ -44,7 +45,7 @@ namespace MemberManagementSystem.ViewModel
 
         private Member CreateMember()
         {
-            return new Member(App.ID, Name, Email, Phone);
+            return new Member(_memberBook.ID, Name, Email, Phone);
         }
 
 

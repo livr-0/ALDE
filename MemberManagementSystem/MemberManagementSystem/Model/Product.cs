@@ -67,9 +67,14 @@ namespace MemberManagementSystem.Model
             {
                 returnString += _description + ',';
             }
-            returnString += string.Format("${0,12:C2},", _price);
+            returnString += string.Format("{0:C2},", _price);
             returnString += _quantity.ToString();
             return returnString;
+        }
+
+        public new static string GetHeader()
+        {
+            return String.Format("{0},{1},{2},{3},{4}", nameof(ID), nameof(Name),nameof(Description),nameof(Price),nameof(Quantity));
         }
 
         public new static Record LoadFromLine(string line)

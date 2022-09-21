@@ -8,6 +8,7 @@ namespace MemberManagementSystem.ViewModel
 {
     internal class AddSalesViewModel : ViewModelBase
     {
+        Book<Sales> _salesBook;
         private string _productID;
 
         public string ProductID
@@ -44,6 +45,7 @@ namespace MemberManagementSystem.ViewModel
 
         public AddSalesViewModel(NavigateService navService, Book<Sales> salesBook)
         {
+            _salesBook = salesBook;
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
             SubmitSales = new AddRecordCommand<Sales>(salesBook, CreateSales);
         }
@@ -56,7 +58,7 @@ namespace MemberManagementSystem.ViewModel
         private Sales CreateSales()
         {
             int quantity = int.Parse(Quantity);
-            return new Sales(App.ID, int.Parse(ProductID), int.Parse(MemberID), DateTime, quantity);
+            return new Sales(_salesBook.ID, int.Parse(ProductID), int.Parse(MemberID), DateTime, quantity);
         }
     }
 }

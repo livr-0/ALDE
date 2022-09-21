@@ -27,6 +27,11 @@ namespace MemberManagementSystem.Model
             return false;
         }
 
+        public static string GetHeader()
+        {
+            return String.Format("{0},{1}",nameof(ID),nameof(Name));
+        }
+
         public static Record LoadFromLine(string line)
         {
             string[] parts = line.Split(',');

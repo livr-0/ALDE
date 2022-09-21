@@ -12,6 +12,12 @@ namespace MemberManagementSystem.Model
         private List<T> _records;
         public IEnumerable<T> Records => _records;
 
+        private int _id;
+        public int ID
+        {
+            get { _id++; return _id; }
+        }
+
         public Book()
         {
             _records = new List<T>();
@@ -61,9 +67,11 @@ namespace MemberManagementSystem.Model
         public void SaveBook(string filepath)
         {
             StreamWriter sw = new StreamWriter(filepath);
+            string header = (string)typeof(T).GetMethod("GetHeader").Invoke(null, new object[] { });
+            sw.WriteLine(header);
             for (int i = 0; i < _records.Count; i++)
             {
-                sw.Write(_records[i].ToString());
+                sw.WriteLine(_records[i].ToString());
             }
             sw.Close();
         }
@@ -74,6 +82,7 @@ namespace MemberManagementSystem.Model
 
             StreamReader sr = new StreamReader(filePath);
             sr.ReadLine();
+            int highestID = 0;
             while (true)
             {
                 string line = sr.ReadLine();
@@ -81,7 +90,13 @@ namespace MemberManagementSystem.Model
 
                 T record = (T)typeof(T).GetMethod("LoadFromLine").Invoke(null, new object[] {line});
                 book.AddRecord(record);
+                if(record.ID > highestID)
+                {
+                    highestID = record.ID;
+                }
             }
+            sr.Close();
+            book._id = highestID;
             return book;
         }
     }

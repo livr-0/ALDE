@@ -59,6 +59,11 @@ namespace MemberManagementSystem.Model
 
         //public IEnumerable<int> SalesRecordIDs => _salesRecordIDs;
 
+        public new static string GetHeader()
+        {
+            return String.Format("{0},{1},{2},{3}", nameof(ID), nameof(Name),nameof(Email),nameof(Phone));
+        }
+
         public new static Record LoadFromLine(string line)
         {
             string[] parts = line.Split(',');
@@ -71,7 +76,7 @@ namespace MemberManagementSystem.Model
             string returnString = ID.ToString() + ',';
             returnString += Name + ',';
             returnString += _email + ',';
-            returnString += _phone + ',';
+            returnString += _phone;
             return returnString;
         }
     }

@@ -17,13 +17,17 @@ namespace MemberManagementSystem
     /// </summary>
     public partial class App : Application
     {
-        private static int _id = 0;
-        public static int ID { get { _id++;  return _id; } }
+        private readonly string _memberPath = "../../../Database/MemberDatabase.csv";
+        private readonly string _productPath = "../../../Database/ProductDatabase.csv";
+        private readonly string _salesPath = "../../../Database/SalesDatabase.csv";
+
 
         private readonly NavigateStore _navStore;
         private readonly Service.NavigateService _navService;
         private readonly Service.ViewModelFactory _factory;
-
+        private readonly Book<Member> _memberBook;
+        private readonly Book<Product> _productBook;
+        private readonly Book<Sales> _salesBook;
         public App()
         {
 
@@ -32,13 +36,13 @@ namespace MemberManagementSystem
             //Creation of Models
             try
             {
-                Book<Member> memberBook = Book<Member>.LoadBook("../../../Database/MemberDatabase.csv");
-                Book<Product> productBook = Book<Product>.LoadBook("../../../Database/ProductDatabase.csv");
-                Book<Sales> salesBook = Book<Sales>.LoadBook("../../../Database/SalesDatabase.csv");
+                _memberBook = Book<Member>.LoadBook(_memberPath);
+                _productBook = Book<Product>.LoadBook(_productPath);
+                _salesBook = Book<Sales>.LoadBook(_salesPath);
                 //Creation of Stores and Services            
                 _navStore = new NavigateStore();
                 _navService = new Service.NavigateService(_navStore);
-                _factory = new Service.ViewModelFactory(_navService, memberBook, productBook, salesBook);
+                _factory = new Service.ViewModelFactory(_navService, _memberBook, _productBook, _salesBook);
                 _navService.Creator = _factory;
             } catch (System.IO.IOException e)
             {
@@ -52,16 +56,21 @@ namespace MemberManagementSystem
             
         }
 
+        public void AppExiting(object sender, EventArgs e)
+        {
+            _memberBook.SaveBook(_memberPath);
+            _salesBook.SaveBook(_salesPath);
+            _productBook.SaveBook(_productPath);
+        }
 
         protected override void OnStartup(StartupEventArgs e)
         {
 
             _navService.Navigate(nameof(HomeViewModel));
-
-            MainWindow = new MainWindow()
-            {
-               DataContext = new MainViewModel(_navStore)
-            };
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.DataContext = new MainViewModel(_navStore);
+            mainWindow.WindowClosing += AppExiting;
+            MainWindow = mainWindow;        
             MainWindow.Show();
             base.OnStartup(e);
         }

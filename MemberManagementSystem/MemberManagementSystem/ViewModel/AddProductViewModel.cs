@@ -8,6 +8,8 @@ namespace MemberManagementSystem.ViewModel
 {
     internal class AddProductViewModel : ViewModelBase
     {
+        Book<Product> _productBook;
+
         private string _name;
 
         public string Name
@@ -44,6 +46,7 @@ namespace MemberManagementSystem.ViewModel
 
         public AddProductViewModel(NavigateService navService, Book<Product> productBook)
         {
+            _productBook = productBook;
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
             SubmitProduct = new AddRecordCommand<Product>(productBook, CreateProduct);
         }
@@ -57,7 +60,7 @@ namespace MemberManagementSystem.ViewModel
         {
             float price = float.Parse(Price);
             int quantity = int.Parse(Quantity);
-            return new Product(App.ID, Name, Description ,price, quantity);
+            return new Product(_productBook.ID, Name, Description ,price, quantity);
         }
     }
 }

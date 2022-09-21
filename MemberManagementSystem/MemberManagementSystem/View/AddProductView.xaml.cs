@@ -36,8 +36,8 @@ namespace MemberManagementSystem.View
         // try to allow price format, eg. 6, 5.1, 5.20
         private void PriceOnly(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("^[0-9]*('\'.[0-9]{0,2})?$");
-            e.Handled = !regex.IsMatch(e.Text);
+            Regex regex = new Regex("[^0-9].");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

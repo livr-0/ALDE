@@ -8,12 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="View\UpdateProductView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\ViewProductView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="View\UpdateProductView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\ViewProductView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

@@ -16,9 +16,12 @@ namespace MemberManagementSystem.ViewModel
         public IEnumerable<ProductViewModel> Products => _product;
         public ICommand HomePage { get; }
 
+        public ICommand UpdateProductPage { get; }
+
         public ViewProductViewModel(Book<Product> productBook, NavigateService navService)
         {
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
+            UpdateProductPage = new NavigateCommand(navService, nameof(UpdateProductViewModel));
             _productBook = productBook;
             _product = new ObservableCollection<ProductViewModel>();
             GatherProductViews(productBook);

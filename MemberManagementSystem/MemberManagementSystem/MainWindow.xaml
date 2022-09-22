@@ -30,6 +30,9 @@
             <DataTemplate DataType="{x:Type vm:ViewMemberViewModel}">
                 <view:ViewMemberView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:UpdateProductViewModel}">
+                <view:UpdateProductView/>
+            </DataTemplate>
         </Grid.Resources>
         <ContentControl Content="{Binding CurrentViewModel}"/>
     </Grid>

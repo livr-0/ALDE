@@ -17,6 +17,16 @@ namespace MemberManagementSystem.ViewModel
         public string Price => _product.Price.ToString();
         public string Quantity => _product.Quantity.ToString();
 
+        public string IDName
+        {
+            get { return _product.ID.ToString() + " - " + _product.Name.ToString(); }
+        }
+
+        public Product Product
+        {
+            get => _product;
+        }
+
         public ProductViewModel(Product product)
         {
             _product = product;

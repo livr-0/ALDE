@@ -142,3 +142,5 @@ C:\Users\harry\Documents\GitHub\ALDE\MemberManagementSystem\MemberManagementSyst
 C:\Users\harry\Documents\GitHub\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\ViewMemberView.baml
 C:\Users\harry\Documents\GitHub\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\ViewProductView.baml
 C:\Users\harry\Documents\GitHub\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\ViewSalesView.baml
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateProductView.g.cs
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateProductView.baml

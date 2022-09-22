@@ -47,7 +47,6 @@ namespace MemberManagementSystem.ViewModel
             set { _quantity = value; OnPropertyChanged(nameof(Quantity)); }
         }
 
-
         private ProductViewModel _selectedProduct;
         public ProductViewModel SelectedProduct
         {
@@ -62,8 +61,6 @@ namespace MemberManagementSystem.ViewModel
             _productBook = productBook;
             _product = new ObservableCollection<ProductViewModel>();
             GatherProductViews(productBook);
-            _selectedProduct = _product[0];
-            updateTextBoxes();
         }
 
         private void GatherProductViews(Book<Product> productBook)
@@ -78,10 +75,10 @@ namespace MemberManagementSystem.ViewModel
 
         private void updateTextBoxes()
         {
-            _name = SelectedProduct.Name.ToString();
-            _description = SelectedProduct.Description.ToString();
-            _quantity = SelectedProduct.Quantity.ToString();
-            _price = SelectedProduct.Price.ToString();   
+            Name = SelectedProduct.Name.ToString();
+            Description = SelectedProduct.Description.ToString();
+            Quantity = SelectedProduct.Quantity.ToString();
+            Price = SelectedProduct.Price.ToString();   
         }
     }
 }

@@ -9,8 +9,8 @@ namespace MemberManagementSystem.Model
 {
     internal class Book<T> where T : Record
     {
-        private List<T> _records;
-        public IEnumerable<T> Records => _records;
+        private Dictionary<int,T> _records;
+        public IEnumerable<T> Records => _records.Values;
 
         private int _id;
         public int ID
@@ -20,72 +20,75 @@ namespace MemberManagementSystem.Model
 
         public Book()
         {
-            _records = new List<T>();
+            _records = new Dictionary<int,T>();
         }
 
         public void AddRecord(T newR)
         {
-            bool isNew = true;
-            foreach (T existingProduct in _records)
+            if (!_records.ContainsKey(newR.ID))
             {
-                if (existingProduct.Conflict(newR))
-                {
-                    isNew = false;
-                    break;
-                }
+                _records.Add(newR.ID, newR);
             }
+            //bool isNew = true;
+            //foreach (T existingProduct in _records.Values)
+            //{
+            //    if (existingProduct.Conflict(newR))
+            //    {
+            //        isNew = false;
+            //        break;
+            //    }
+            //}
 
-            if (isNew)
-            {
-                _records.Add(newR);
-            }
+            //if (isNew)
+            //{
+            //    _records.Add(newR.ID,newR);
+            //}
         }
 
         public void RemoveRecord(T newR)
         {
-            if (_records.Contains(newR))
+            if (_records.ContainsKey(newR.ID))
             {
-                _records.Remove(newR);
+                _records.Remove(newR.ID);
             }
         }
 
-        public IEnumerable<T> GetRecord(string name)
-        {
-            return _records.Where(p => p.Name.ToLower().Equals(name.ToLower()));
-        }
+        //public IEnumerable<T> GetRecord(string name)
+        //{
+        //   // return _records.Where(p.Value => p.Value.Name.ToLower().Equals(name.ToLower()));
+        //}
 
-        public IEnumerable<T> GetRecord(int id)
-        {
-            return _records.Where(_record => _record.ID == id);
-        }
+        //public IEnumerable<T> GetRecord(int id)
+        //{
+        //    return _records.Where(_record => _record.ID == id);
+        //}
 
         public T GetSingleRecord(int id)
         {
-            IEnumerable<T> records = GetRecord(id);
-            return records.First<T>();
+            return _records[id];
         }
 
-        public void SwapRecord(T newRecord)
-        {
-            for (int i = 0; i < _records.Count; i++)
-            {
-                if (newRecord.ID == _records[i].ID)
-                {
-                    _records[i] = newRecord;
-                    break;
-                }
+        //public void SwapRecord(T newRecord)
+        //{
+        //    for (int i = 0; i < _records.Count; i++)
+        //    {
+        //        if (newRecord.ID == _records[i].ID)
+        //        {
+        //            _records[i] = newRecord;
+        //            break;
+        //        }
 
-            }
-        }
+        //    }
+        //}
 
         public void SaveBook(string filepath)
         {
             StreamWriter sw = new StreamWriter(filepath);
             string header = (string)typeof(T).GetMethod("GetHeader").Invoke(null, new object[] { });
             sw.WriteLine(header);
-            for (int i = 0; i < _records.Count; i++)
+            foreach (Record record in _records.Values)
             {
-                sw.WriteLine(_records[i].ToString());
+                sw.WriteLine(record.ToString());
             }
             sw.Close();
         }

@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Andy\\.nuget\\packages\\": {}
+    "C:\\Users\\harry\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andy\\Documents\\sWINBURNE sOFTWARE eNG\\Year 2 Semester 2\\SWE20001 Managing Software Projects\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
+      "projectUniqueName": "C:\\Users\\harry\\Documents\\GitHub\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
       "projectName": "MemberManagementSystem",
-      "projectPath": "C:\\Users\\Andy\\Documents\\sWINBURNE sOFTWARE eNG\\Year 2 Semester 2\\SWE20001 Managing Software Projects\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
-      "packagesPath": "C:\\Users\\Andy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andy\\Documents\\sWINBURNE sOFTWARE eNG\\Year 2 Semester 2\\SWE20001 Managing Software Projects\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\",
+      "projectPath": "C:\\Users\\harry\\Documents\\GitHub\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
+      "packagesPath": "C:\\Users\\harry\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\harry\\Documents\\GitHub\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Andy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\harry\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -66,13 +66,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Andy\\Documents\\sWINBURNE sOFTWARE eNG\\Year 2 Semester 2\\SWE20001 Managing Software Projects\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

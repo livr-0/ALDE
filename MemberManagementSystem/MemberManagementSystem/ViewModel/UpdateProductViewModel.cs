@@ -85,7 +85,7 @@ namespace MemberManagementSystem.ViewModel
 
         private void UpdateProduct()
         {
-            if (string.IsNullOrEmpty(Price) && string.IsNullOrEmpty(Quantity))
+            if (!string.IsNullOrEmpty(Price) && !string.IsNullOrEmpty(Quantity))
             {
                 float price = float.Parse(Price);
                 int quantity = int.Parse(Quantity);
@@ -97,7 +97,7 @@ namespace MemberManagementSystem.ViewModel
                 pChanged.Name = _name;
                 pChanged.Description = _description;
 
-                _productBook.SwapRecord(pChanged);
+               // _productBook.SwapRecord(pChanged);
             }
 
 

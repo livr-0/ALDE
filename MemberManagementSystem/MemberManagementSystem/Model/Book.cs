@@ -58,10 +58,24 @@ namespace MemberManagementSystem.Model
         {
             return _records.Where(_record => _record.ID == id);
         }
+
         public T GetSingleRecord(int id)
         {
             IEnumerable<T> records = GetRecord(id);
             return records.First<T>();
+        }
+
+        public void SwapRecord(T newRecord)
+        {
+            for (int i = 0; i < _records.Count; i++)
+            {
+                if (newRecord.ID == _records[i].ID)
+                {
+                    _records[i] = newRecord;
+                    break;
+                }
+
+            }
         }
 
         public void SaveBook(string filepath)

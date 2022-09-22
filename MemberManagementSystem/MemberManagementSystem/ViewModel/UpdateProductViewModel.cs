@@ -15,6 +15,7 @@ namespace MemberManagementSystem.ViewModel
         private ObservableCollection<ProductViewModel> _product;
         public IEnumerable<ProductViewModel> Products => _product;
         public ICommand HomePage { get; }
+        public ICommand AlterProduct { get; }
 
         private string _name;
         public string Name
@@ -61,6 +62,7 @@ namespace MemberManagementSystem.ViewModel
             _productBook = productBook;
             _product = new ObservableCollection<ProductViewModel>();
             GatherProductViews(productBook);
+            AlterProduct = new UpdateRecordCommand<Product>(productBook, UpdateProduct);
         }
 
         private void GatherProductViews(Book<Product> productBook)
@@ -79,6 +81,26 @@ namespace MemberManagementSystem.ViewModel
             Description = SelectedProduct.Description.ToString();
             Quantity = SelectedProduct.Quantity.ToString();
             Price = SelectedProduct.Price.ToString();   
+        }
+
+        private void UpdateProduct()
+        {
+            if (string.IsNullOrEmpty(Price) && string.IsNullOrEmpty(Quantity))
+            {
+                float price = float.Parse(Price);
+                int quantity = int.Parse(Quantity);
+
+                Product pChanged = _productBook.GetSingleRecord(int.Parse(_selectedProduct.ProductID));
+
+                pChanged.Price = price;
+                pChanged.Quantity = quantity;
+                pChanged.Name = _name;
+                pChanged.Description = _description;
+
+                _productBook.SwapRecord(pChanged);
+            }
+
+
         }
     }
 }

@@ -23,7 +23,7 @@ namespace MemberManagementSystem.Model
 
         public Product(int id, string name, string desc, float price) : this(id, name, desc, price, 0) { }
 
-        public bool Sold(int num)
+        /*public bool Sold(int num)
         {
             if (_quantity - num > 0)
             {
@@ -36,7 +36,7 @@ namespace MemberManagementSystem.Model
         public void NewStock(int num)
         {
             _quantity = _quantity + num;
-        }
+        }*/
 
         public float Price
         {
@@ -47,6 +47,7 @@ namespace MemberManagementSystem.Model
         public int Quantity
         {
             get { return _quantity; }
+            set { _quantity = value; }
         }
 
         public string Description

@@ -13,9 +13,10 @@ namespace MemberManagementSystem.ViewModel
         private Book<Member> _memberBook;
         private Book<Product> _productBook;
 
-        public string SaleID => _sale.ID.ToString();
+        public string SalesID => _sale.ID.ToString();
 
         public string MemberID => _sale.MemberID.ToString();
+
         public string MemberName
         {
             get
@@ -42,6 +43,5 @@ namespace MemberManagementSystem.ViewModel
             _memberBook = memberBook;
             _productBook = productBook;
         }
-
     }
 }

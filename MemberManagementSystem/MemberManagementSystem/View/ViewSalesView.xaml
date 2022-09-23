@@ -18,14 +18,15 @@
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Naviagtion Menu"/>
             <Button Grid.Row="0" Grid.Column="1" Content="Home" Command="{Binding HomePage}"/>
+            <Button Grid.Row="0" Grid.Column="1" Content="Update" Command="{Binding UpdateSalesPage}" Margin="50,0, -60,0"/>
         </Grid>
-        <ListView Grid.Row="1" ItemsSource="{Binding Sales}">
+        <ListView Grid.Row="2" ItemsSource="{Binding Sales}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Sale ID">
+                    <GridViewColumn Header="Sales ID">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock HorizontalAlignment="Center" Text="{Binding SaleID}" />
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding SalesID}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

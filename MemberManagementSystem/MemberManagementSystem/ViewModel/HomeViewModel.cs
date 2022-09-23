@@ -27,7 +27,6 @@ namespace MemberManagementSystem.ViewModel
             ViewMemberPage = new NavigateCommand(navService, nameof(ViewMemberViewModel));
             ViewSalesPage = new NavigateCommand(navService, nameof(ViewSalesViewModel));
             ViewProductPage = new NavigateCommand(navService, nameof(ViewProductViewModel));
-
         }
     }
 }

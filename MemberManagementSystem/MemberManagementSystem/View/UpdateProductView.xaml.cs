@@ -17,7 +17,7 @@ using System.Text.RegularExpressions;
 namespace MemberManagementSystem.View
 {
     /// <summary>
-    /// Interaction logic for AddProductView.xaml
+    /// Interaction logic for UpdateProductView.xaml
     /// </summary>
     public partial class UpdateProductView : UserControl
     {

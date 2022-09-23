@@ -19,6 +19,8 @@ namespace MemberManagementSystem.ViewModel
 
         public ICommand HomePage { get; }
 
+        public ICommand UpdateSalesPage { get; }
+
         public ViewSalesViewModel(Book<Sales> salesBook, NavigateService navService, Book<Member> memberBook, Book<Product> productBook)
         {
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
@@ -27,16 +29,16 @@ namespace MemberManagementSystem.ViewModel
             _memberBook = memberBook;
             _productBook = productBook;
             GatherSalesViews(salesBook);
-            
+            UpdateSalesPage = new NavigateCommand(navService, nameof(UpdateSalesViewModel));
         }
 
-        private void GatherSalesViews(Book<Sales> saleBook)
+        private void GatherSalesViews(Book<Sales> salesBook)
         {
             _sales.Clear();
-            IEnumerable<Sales> sales = saleBook.Records;
-            foreach(Sales sale in sales)
+            IEnumerable<Sales> sales = salesBook.Records;
+            foreach(Sales s in sales)
             {
-                _sales.Add(new SalesViewModel(sale, _memberBook, _productBook));
+                _sales.Add(new SalesViewModel(s, _memberBook, _productBook));
             }
         }
 

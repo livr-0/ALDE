@@ -16,7 +16,6 @@ namespace MemberManagementSystem.ViewModel
         public IEnumerable<ProductViewModel> Products => _product;
         public ICommand HomePage { get; }
         public ICommand AlterProduct { get; }
-
         private string _name;
         public string Name
         {

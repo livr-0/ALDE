@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Release\net6.0-windows\
+C:\Users\linhv\source\repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Release\net6.0-windows\
 MemberManagementSystem
 none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
-C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\App.xaml
-41857213728
+C:\Users\linhv\source\repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\App.xaml
+10-533611028
 
-27-287589104
-1941905061893
-MainWindow.xaml;View\AddMemberView.xaml;View\AddProductView.xaml;View\HomeView.xaml;
+411414675395
+1941645785384
+MainWindow.xaml;View\AddMemberView.xaml;View\AddProductView.xaml;View\AddSalesView.xaml;View\HomeView.xaml;View\UpdateProductView.xaml;View\UpdateSalesView.xaml;View\ViewMemberView.xaml;View\ViewProductView.xaml;View\ViewSalesView.xaml;
 
 True
 

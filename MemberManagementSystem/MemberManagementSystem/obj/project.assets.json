@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\harry\\.nuget\\packages\\": {}
+    "C:\\Users\\linhv\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\harry\\Documents\\GitHub\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
+      "projectUniqueName": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
       "projectName": "MemberManagementSystem",
-      "projectPath": "C:\\Users\\harry\\Documents\\GitHub\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
-      "packagesPath": "C:\\Users\\harry\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\harry\\Documents\\GitHub\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\",
+      "projectPath": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
+      "packagesPath": "C:\\Users\\linhv\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\harry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\linhv\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

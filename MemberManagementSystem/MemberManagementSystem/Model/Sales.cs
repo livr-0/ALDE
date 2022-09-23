@@ -40,7 +40,7 @@ namespace MemberManagementSystem.Model
             return returnString;
         }
 
-        public static string GetHeader()
+        public new static string GetHeader()
         {
             return String.Format("{0},{1},{2},{3},{4},", nameof(ID),nameof(ProductID),nameof(MemberID),nameof(DateTime),nameof(Quantity));
         }

@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MemberManagementSystem",
+    "\\MemberManagementSystem\\MemberManagementSystem",
+    "\\MemberManagementSystem\\MemberManagementSystem\\Commands",
+    "\\MemberManagementSystem\\MemberManagementSystem\\View",
+    "\\MemberManagementSystem\\MemberManagementSystem\\ViewModel"
   ],
+  "SelectedNode": "\\MemberManagementSystem\\MemberManagementSystem\\View\\UpdateSalesView.xaml",
   "PreviewInSolutionExplorer": false
 }

@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="View\UpdateMemberView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\UpdateProductView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -17,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="View\UpdateMemberView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\UpdateProductView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

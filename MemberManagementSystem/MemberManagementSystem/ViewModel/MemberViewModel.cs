@@ -16,6 +16,16 @@ namespace MemberManagementSystem.ViewModel
         public string Phone => _member.Phone.ToString();
         public string Email => _member.Email.ToString();
 
+        public string IDName
+        {
+            get { return _member.ID.ToString() + " - " + _member.Name.ToString(); }
+        }
+
+        public Member Member
+        {
+            get => _member;
+        }
+        
         public MemberViewModel(Member member)
         {
             _member = member;

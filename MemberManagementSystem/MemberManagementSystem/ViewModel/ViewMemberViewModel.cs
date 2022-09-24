@@ -3,6 +3,7 @@ using MemberManagementSystem.Model;
 using MemberManagementSystem.Service;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Windows.Input;
 
 namespace MemberManagementSystem.ViewModel
@@ -15,10 +16,12 @@ namespace MemberManagementSystem.ViewModel
         public IEnumerable<MemberViewModel> Member => _member;
 
         public ICommand HomePage { get; }
+        public ICommand UpdateMemberPage { get; }
 
         public ViewMemberViewModel(Book<Member> memberBook, NavigateService navService)
         {
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
+            UpdateMemberPage = new NavigateCommand(navService, nameof(UpdateMemberViewModel));
             _memberBook = memberBook;
             _member = new ObservableCollection<MemberViewModel>();
             GatherMemberViews(memberBook);

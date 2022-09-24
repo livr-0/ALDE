@@ -186,3 +186,9 @@ C:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementS
 C:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\ref\MemberManagementSystem.dll
 C:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateSalesView.g.cs
 C:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateSalesView.baml
+C:\Users\jayde\Source\Repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateProductView.g.cs
+C:\Users\jayde\Source\Repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateSalesView.g.cs
+C:\Users\jayde\Source\Repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateProductView.baml
+C:\Users\jayde\Source\Repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateSalesView.baml
+C:\Users\jayde\Source\Repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateMemberView.g.cs
+C:\Users\jayde\Source\Repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateMemberView.baml

@@ -75,12 +75,12 @@ namespace MemberManagementSystem.Service
         }
         private ViewModelBase CreateViewMemberViewModel()
         {
-            return new ViewMemberViewModel(_memberBook, _navService);
+            return new ViewMemberViewModel(_memberBook, _navService, _recordViewModelFactory);
         }
 
         private ViewModelBase CreateViewProductViewModel()
         {
-            return new ViewProductViewModel(_productBook, _navService);
+            return new ViewProductViewModel(_productBook, _navService, _recordViewModelFactory);
         }
 
         private ViewModelBase CreateAddMemberViewModel()

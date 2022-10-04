@@ -65,7 +65,12 @@ namespace MemberManagementSystem.Model
 
         public T GetSingleRecord(int id)
         {
-            return _records[id];
+            if (_records.ContainsKey(id))
+            {
+                return _records[id];
+            }
+            return null;
+           
         }
 
         //public void SwapRecord(T newRecord)

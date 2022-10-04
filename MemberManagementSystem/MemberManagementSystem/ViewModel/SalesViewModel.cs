@@ -27,6 +27,7 @@ namespace MemberManagementSystem.ViewModel
             get
             {
                 Member m = _memberBook.GetSingleRecord(_sale.MemberID);
+                if (m == null) return "Discontinued";
                 return m.Name;
             }
         }
@@ -36,6 +37,7 @@ namespace MemberManagementSystem.ViewModel
             get
             {
                 Product p = _productBook.GetSingleRecord(_sale.ProductID);
+                if (p == null) return "Discontinued";
                 return p.Name;
             }
         }

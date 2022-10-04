@@ -29,7 +29,6 @@
             <Button Grid.Row="0" Grid.Column="3" Content="Search" Command="{Binding UpdateSalesPage}" />
             <Label Grid.Row="0" Grid.Column="4" Content="Member:"/>
             <TextBox Grid.Row="0" Grid.Column="5" Text="{Binding MemberSearch, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
-            <!--other label and search box here-->
             <Button Grid.Row="0" Grid.Column="8" Content="Clear" Command="{Binding UpdateSalesPage}"/>
         </Grid>
         <ListView Grid.Row="2" ItemsSource="{Binding Sales}">

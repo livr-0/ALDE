@@ -16,6 +16,8 @@ namespace MemberManagementSystem.ViewModel
         public IEnumerable<ProductViewModel> Products => _product;
         public ICommand HomePage { get; }
         public ICommand AlterProduct { get; }
+        public ICommand DeleteProduct { get; }
+
         private string _name;
         public string Name
         {
@@ -62,6 +64,7 @@ namespace MemberManagementSystem.ViewModel
             _product = new ObservableCollection<ProductViewModel>();
             GatherProductViews(productBook);
             AlterProduct = new UpdateRecordCommand<Product>(productBook, UpdateProduct);
+            DeleteProduct = new RemoveRecordCommand<Product>(productBook, RemoveProduct);
         }
 
         private void GatherProductViews(Book<Product> productBook)
@@ -100,6 +103,14 @@ namespace MemberManagementSystem.ViewModel
             }
 
 
+        }
+
+        private void RemoveProduct()
+        {
+            if(SelectedProduct != null)
+            {
+                _productBook.RemoveRecord(SelectedProduct.Product);
+            }
         }
     }
 }

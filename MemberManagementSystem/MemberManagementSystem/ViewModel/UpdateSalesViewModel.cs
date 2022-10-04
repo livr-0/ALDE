@@ -18,7 +18,8 @@ namespace MemberManagementSystem.ViewModel
         public IEnumerable<SalesViewModel> Sales => _sales;
         public ICommand HomePage { get; }
         public ICommand AlterSales { get; }
-       
+        public ICommand DeleteSales { get; }
+
         private string _quantity;
 
         public string Quantity
@@ -71,6 +72,7 @@ namespace MemberManagementSystem.ViewModel
             _sales = new ObservableCollection<SalesViewModel>();
             GatherSalesViews(salesBook);
             AlterSales = new UpdateRecordCommand<Sales>(salesBook, UpdateSales);
+            DeleteSales = new RemoveRecordCommand<Sales>(salesBook, RemoveSales);
         }
 
         private void GatherSalesViews(Book<Sales> salesBook)
@@ -105,6 +107,14 @@ namespace MemberManagementSystem.ViewModel
                 sChanged.MemberID = memberID;
                 sChanged.Quantity = quantity;
                 sChanged.DateTime = DateTime;
+            }
+        }
+
+        private void RemoveSales()
+        {
+            if (SelectedSales != null)
+            {
+                _salesBook.RemoveRecord(SelectedSales.Sale);
             }
         }
     }

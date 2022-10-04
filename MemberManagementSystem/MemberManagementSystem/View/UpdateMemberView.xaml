@@ -77,5 +77,6 @@
             <TextBox Grid.Column="1" Width="135" Text="{Binding Phone, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
         <Button Grid.Row="13" Content="Submit" Command="{Binding AlterMember}"/>
+        <Button Grid.Row="15" Grid.Column="1" Content="Delete" Command="{Binding DeleteMember}"/>
     </Grid>
 </UserControl>

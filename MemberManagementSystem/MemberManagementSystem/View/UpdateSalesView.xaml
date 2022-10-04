@@ -78,6 +78,7 @@
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Quantity"/>
             <TextBox Grid.Column="1" Width="135" PreviewTextInput="NumberOnly" Text="{Binding Quantity, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
-        <Button Grid.Row="15" Content="Submit" Command="{Binding AlterSales}"/>
+        <Button Grid.Row="15" Grid.Column="0" Content="Submit" Command="{Binding AlterSales}"/>
+        <Button Grid.Row="15" Grid.Column="1" Content="Delete" Command="{Binding DeleteSales}"/>
     </Grid>
 </UserControl>

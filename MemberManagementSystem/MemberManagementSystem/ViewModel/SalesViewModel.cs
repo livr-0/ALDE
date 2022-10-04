@@ -13,6 +13,11 @@ namespace MemberManagementSystem.ViewModel
         private Book<Member> _memberBook;
         private Book<Product> _productBook;
 
+        public Sales Sale
+        {
+            get { return _sale; }
+        }
+
         public string SalesID => _sale.ID.ToString();
 
         public string MemberID => _sale.MemberID.ToString();

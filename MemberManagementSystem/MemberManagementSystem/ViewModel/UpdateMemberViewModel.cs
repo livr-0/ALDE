@@ -16,6 +16,8 @@ namespace MemberManagementSystem.ViewModel
         public IEnumerable<MemberViewModel> Members => _member;
         public ICommand HomePage { get; }
         public ICommand AlterMember { get; }
+        public ICommand DeleteMember { get; }
+
         private string _name;
         public string Name
         {
@@ -55,6 +57,7 @@ namespace MemberManagementSystem.ViewModel
             _member = new ObservableCollection<MemberViewModel>();
             GatherMemberViews(memberBook);
             AlterMember = new UpdateRecordCommand<Member>(memberBook, UpdateMember);
+            DeleteMember = new RemoveRecordCommand<Member>(memberBook, RemoveMember);
         }
 
         private void GatherMemberViews(Book<Member> memberBook)
@@ -88,6 +91,14 @@ namespace MemberManagementSystem.ViewModel
             }
 
 
+        }
+
+        private void RemoveMember()
+        {
+            if (SelectedMember != null)
+            {
+                _memberBook.RemoveRecord(SelectedMember.Member);
+            }
         }
     }
 }

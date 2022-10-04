@@ -192,3 +192,7 @@ C:\Users\jayde\Source\Repos\ALDE\MemberManagementSystem\MemberManagementSystem\o
 C:\Users\jayde\Source\Repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateSalesView.baml
 C:\Users\jayde\Source\Repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateMemberView.g.cs
 C:\Users\jayde\Source\Repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateMemberView.baml
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateMemberView.g.cs
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateSalesView.g.cs
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateMemberView.baml
+C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateSalesView.baml

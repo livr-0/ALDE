@@ -46,7 +46,11 @@ namespace MemberManagementSystem {
         /// </summary>
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+<<<<<<< HEAD
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.2.0")]
+=======
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.6.0")]
+>>>>>>> b62a97e0fd8ae51062b50c7bbd9e987b2e363699
         public static void Main() {
             MemberManagementSystem.App app = new MemberManagementSystem.App();
             app.Run();

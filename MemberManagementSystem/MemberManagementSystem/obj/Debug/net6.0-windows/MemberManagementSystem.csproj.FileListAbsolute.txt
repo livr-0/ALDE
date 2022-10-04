@@ -192,7 +192,16 @@ C:\Users\jayde\Source\Repos\ALDE\MemberManagementSystem\MemberManagementSystem\o
 C:\Users\jayde\Source\Repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateSalesView.baml
 C:\Users\jayde\Source\Repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateMemberView.g.cs
 C:\Users\jayde\Source\Repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateMemberView.baml
+<<<<<<< HEAD
 C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateMemberView.g.cs
 C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateSalesView.g.cs
 C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateMemberView.baml
 C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateSalesView.baml
+=======
+C:\Users\harry\Programming\GitHub\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateMemberView.g.cs
+C:\Users\harry\Programming\GitHub\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateProductView.g.cs
+C:\Users\harry\Programming\GitHub\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateSalesView.g.cs
+C:\Users\harry\Programming\GitHub\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateMemberView.baml
+C:\Users\harry\Programming\GitHub\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateProductView.baml
+C:\Users\harry\Programming\GitHub\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\UpdateSalesView.baml
+>>>>>>> b62a97e0fd8ae51062b50c7bbd9e987b2e363699

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MemberManagementSystem.ViewModel
 {
-    internal class MemberViewModel
+    internal class MemberViewModel : ViewModelBase
     {
         private Member _member;
 

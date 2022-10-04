@@ -1,6 +1,7 @@
 ﻿using MemberManagementSystem.Commands;
 using MemberManagementSystem.Model;
 using MemberManagementSystem.Service;
+using MemberManagementSystem.Stores;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -11,30 +12,32 @@ namespace MemberManagementSystem.ViewModel
     internal class ViewProductViewModel : ViewModelBase
     {
         Book<Product> _productBook;
-
-        private ObservableCollection<ProductViewModel> _product;
-        public IEnumerable<ProductViewModel> Products => _product;
+        RecordViewModelStore _productStore;
+        public IEnumerable<ViewModelBase> Products => _productStore.RecordsToDisplay;
         public ICommand HomePage { get; }
 
         public ICommand UpdateProductPage { get; }
+        public ICommand ClearSearch { get; }
 
-        public ViewProductViewModel(Book<Product> productBook, NavigateService navService)
+        public ViewProductViewModel(Book<Product> productBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory)
         {
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
             UpdateProductPage = new NavigateCommand(navService, nameof(UpdateProductViewModel));
             _productBook = productBook;
-            _product = new ObservableCollection<ProductViewModel>();
-            GatherProductViews(productBook);
+            _productStore = new RecordViewModelStore();
+
+            ClearSearch = new ResetRecordViewStoreCommand<Product>(_productStore, _productBook, recordViewModelFactory);
+            ClearSearch.Execute(null);
         }
 
-        private void GatherProductViews(Book<Product> productBook)
-        {
-            _product.Clear();
-            IEnumerable<Product> products = productBook.Records; 
-            foreach (Product product in products)
-            {
-                _product.Add(new ProductViewModel(product));
-            }
-        }
+        //private void GatherProductViews(Book<Product> productBook)
+        //{
+        //    _product.Clear();
+        //    IEnumerable<Product> products = productBook.Records; 
+        //    foreach (Product product in products)
+        //    {
+        //        _product.Add(new ProductViewModel(product));
+        //    }
+        //}
     }
 }

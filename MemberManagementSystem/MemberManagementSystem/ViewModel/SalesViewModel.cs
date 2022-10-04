@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MemberManagementSystem.ViewModel
 {
-    internal class SalesViewModel
+    internal class SalesViewModel : ViewModelBase
     {
         private Sales _sale;
         private Book<Member> _memberBook;

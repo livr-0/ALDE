@@ -1,0 +1,39 @@
+﻿using MemberManagementSystem.Model;
+using MemberManagementSystem.ViewModel;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MemberManagementSystem.Service
+{
+    internal class RecordViewModelFactory
+    {
+        private Book<Member> _memberBook;
+        private Book<Product> _productBook;
+
+        private Book<Sales> _salesBook;
+
+        public RecordViewModelFactory(Book<Member> memberBook, Book<Product> productBook, Book<Sales> salesBook)
+        {
+            _memberBook = memberBook;
+            _productBook = productBook;
+            _salesBook = salesBook;
+        }
+        public ViewModelBase CreateRecordViewModel(Record r)
+        {
+            string type = r.GetType().Name;
+            switch (type)
+            {
+                case nameof(Sales):
+                    return new SalesViewModel((Sales)r, _memberBook, _productBook);
+                case nameof(MemberManagementSystem.Model.Member):
+                    return new MemberViewModel((Member)r);
+                case nameof(MemberManagementSystem.Model.Product):
+                    return new ProductViewModel((Product)r);
+            }
+            throw new ArgumentException(r.GetType().ToString() + " is not a record type");
+        }
+    }
+}

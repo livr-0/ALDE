@@ -20,6 +20,8 @@ namespace MemberManagementSystem.Service
 
         private Book<Sales> _salesBook;
 
+        private RecordViewModelFactory _recordViewModelFactory;
+
         /// <summary>
         /// Any paramters that may be needed for a new viewmodel needto be passed into ViewModelFacotryConstructed
         /// </summary>
@@ -29,6 +31,7 @@ namespace MemberManagementSystem.Service
             _memberBook = memberBook;   
             _productBook = productBook;
             _salesBook = salesBook;
+            _recordViewModelFactory = new RecordViewModelFactory(memberBook, productBook, salesBook);
         }
 
         /// <summary>
@@ -68,7 +71,7 @@ namespace MemberManagementSystem.Service
 
         private ViewModelBase CreateViewSalesViewModel()
         {
-            return new ViewSalesViewModel(_salesBook, _navService, _memberBook, _productBook);
+            return new ViewSalesViewModel(_salesBook, _navService, _recordViewModelFactory, _memberBook, _productBook);
         }
         private ViewModelBase CreateViewMemberViewModel()
         {

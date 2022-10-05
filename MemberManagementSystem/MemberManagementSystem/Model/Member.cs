@@ -8,42 +8,18 @@ namespace MemberManagementSystem.Model
 {
     internal class Member : Record
     {
-        private string _email{ get; set; }
+        private string _email;
         private string _phone;
+        private bool _activeStatus;
 
 
-
-        public Member(int id, string name, string email, string phone) : base(id, name)
+        public Member(int id, string name, string email, string phone, bool activeStatus) : base(id, name)
         {
             _email = email;
             _phone = phone;
+            _activeStatus = activeStatus;
         }
 
-        //public void AddSale(int saleID)
-        //{
-        //    bool isNew = true;
-        //    foreach (int existingSaleID in _salesRecordIDs)
-        //    {
-        //        if (existingSaleID == saleID)
-        //        {
-        //            isNew = false;
-        //            break;
-        //        }
-        //    }
-
-        //    if (isNew)
-        //    {
-        //        _salesRecordIDs.Add(saleID);
-        //    }
-        //}
-
-        //public void RemoveSale(int saleID)
-        //{
-        //    if (_salesRecordIDs.Contains(saleID))
-        //    {
-        //        _salesRecordIDs.Remove(saleID);
-        //    }
-        //}
 
         public string Email
         {
@@ -57,17 +33,21 @@ namespace MemberManagementSystem.Model
             set { _phone = value; }
         }
 
-        //public IEnumerable<int> SalesRecordIDs => _salesRecordIDs;
+        public bool ActiveStatus
+        {
+            get { return _activeStatus; }
+            set { _activeStatus = value; }
+        }
 
         public new static string GetHeader()
         {
-            return String.Format("{0},{1},{2},{3}", nameof(ID), nameof(Name),nameof(Email),nameof(Phone));
+            return String.Format("{0},{1},{2},{3},{4}", nameof(ID), nameof(Name),nameof(Email),nameof(Phone), nameof(ActiveStatus));
         }
 
         public new static Record LoadFromLine(string line)
         {
             string[] parts = line.Split(',');
-            return new Member(int.Parse(parts[0]), parts[1],parts[2],parts[3]);
+            return new Member(int.Parse(parts[0]), parts[1],parts[2],parts[3], Boolean.Parse(parts[4]));
         }
 
         // may be used to save for csv
@@ -76,7 +56,8 @@ namespace MemberManagementSystem.Model
             string returnString = ID.ToString() + ',';
             returnString += Name + ',';
             returnString += _email + ',';
-            returnString += _phone;
+            returnString += _phone + ',';
+            returnString += _activeStatus.ToString();
             return returnString;
         }
     }

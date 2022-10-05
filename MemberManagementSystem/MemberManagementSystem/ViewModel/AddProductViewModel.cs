@@ -60,7 +60,7 @@ namespace MemberManagementSystem.ViewModel
         {
             float price = float.Parse(Price);
             int quantity = int.Parse(Quantity);
-            return new Product(_productBook.ID, Name, Description ,price, quantity);
+            return new Product(_productBook.ID, Name, Description ,price, quantity, true);
         }
     }
 }

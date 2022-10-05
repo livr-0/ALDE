@@ -45,7 +45,7 @@ namespace MemberManagementSystem.ViewModel
 
         private Member CreateMember()
         {
-            return new Member(_memberBook.ID, Name, Email, Phone);
+            return new Member(_memberBook.ID, Name, Email, Phone, true);
         }
 
 

@@ -53,7 +53,7 @@ namespace MemberManagementSystem.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MemberManagementSystem;component/view/updatesalesview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MemberManagementSystem;V1.0.0.0;component/view/updatesalesview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\UpdateSalesView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

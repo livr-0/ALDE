@@ -1,20 +1,32 @@
 ﻿MemberManagementSystem
-
+1.0.0.0
 
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\
+=======
+C:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\
+>>>>>>> 533e31c8b6374be71e09e7aabcf6a8f1d868acde
 MemberManagementSystem
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+<<<<<<< HEAD
 C:\Users\Andy\Documents\sWINBURNE sOFTWARE eNG\Year 2 Semester 2\SWE20001 Managing Software Projects\ALDE\MemberManagementSystem\MemberManagementSystem\App.xaml
 11-1070422687
 
 481856359542
 1941905061893
+=======
+C:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\App.xaml
+11-1070422687
+
+511512178212
+1941645785384
+>>>>>>> 533e31c8b6374be71e09e7aabcf6a8f1d868acde
 MainWindow.xaml;View\AddMemberView.xaml;View\AddProductView.xaml;View\AddSalesView.xaml;View\HomeView.xaml;View\UpdateMemberView.xaml;View\UpdateProductView.xaml;View\UpdateSalesView.xaml;View\ViewMemberView.xaml;View\ViewProductView.xaml;View\ViewSalesView.xaml;
 
-False
+True
 

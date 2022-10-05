@@ -34,7 +34,7 @@ namespace MemberManagementSystem.ViewModel
         public ICommand ClearSearch { get; }
         public ICommand Search { get; }
 
-        public ViewSalesViewModel(Book<Sales> salesBook, NavigateService navService, RecordViewModelFactory recordViewModelFacotry, Book<Member> memberBook, Book<Product> productBook)
+        public ViewSalesViewModel(Book<Sales> salesBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory, Book<Member> memberBook, Book<Product> productBook)
         {
             _salesStore = new RecordViewModelStore();
             _salesBook = salesBook;
@@ -43,8 +43,10 @@ namespace MemberManagementSystem.ViewModel
 
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
             UpdateSalesPage = new NavigateCommand(navService, nameof(UpdateSalesViewModel));
-            ClearSearch = new ResetRecordViewStoreCommand<Sales>(_salesStore, _salesBook, recordViewModelFacotry);
+            ClearSearch = new ResetRecordViewStoreCommand<Sales>(_salesStore, _salesBook, recordViewModelFactory);
             ClearSearch.Execute(null);
+
+            Search = new SearchByMemberCommand(memberBook, salesBook, _salesStore, recordViewModelFactory, this);
             
             
             

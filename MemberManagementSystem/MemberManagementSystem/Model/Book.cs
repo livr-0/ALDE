@@ -9,7 +9,7 @@ namespace MemberManagementSystem.Model
 {
     internal class Book<T> where T : Record
     {
-        private Dictionary<int,T> _records;
+        private Dictionary<int, T> _records;
         public IEnumerable<T> Records => _records.Values;
 
         private int _id;
@@ -20,7 +20,7 @@ namespace MemberManagementSystem.Model
 
         public Book()
         {
-            _records = new Dictionary<int,T>();
+            _records = new Dictionary<int, T>();
         }
 
         public void AddRecord(T newR)
@@ -53,11 +53,17 @@ namespace MemberManagementSystem.Model
             }
         }
 
-        //public IEnumerable<T> GetRecord(string name)
-        //{
-        //   // return _records.Where(p.Value => p.Value.Name.ToLower().Equals(name.ToLower()));
-        //}
+        public IEnumerable<int> GetRecordIDsByName(string name)
+        {
+            return GetRecordsByName(name).Select((r, ID) => r.ID);
+        }
 
+        public IEnumerable<T> GetRecordsByName(string name)
+        {
+            return _records.Values.Where(r => (
+                r.Name.ToLower().Contains(name.ToLower()) 
+                ));
+        }
         //public IEnumerable<T> GetRecord(int id)
         //{
         //    return _records.Where(_record => _record.ID == id);

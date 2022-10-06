@@ -29,7 +29,7 @@
             <Button Grid.Row="0" Grid.Column="1" Content="Home" Command="{Binding HomePage}"/>
             <Button Grid.Row="0" Grid.Column="2" Content="Update" Command="{Binding UpdateProductPage}"/>
             <Label Grid.Row="0" Grid.Column="4"  Content="Sort by:"/>
-            <ComboBox Grid.Column="5"  Width="150" ItemsSource="{Binding SortOptions}" SelectedItem="{Binding SortOption}" DisplayMemberPath="OptionName"/>
+            <ComboBox Grid.Column="5"  Width="150" ItemsSource="{Binding Options}" SelectedItem="{Binding Option}" DisplayMemberPath="Name"/>
             <Button Grid.Row="0" Grid.Column="12" Content="Sort" Command="{Binding Sort}"/>
         </Grid>
         <ListView Grid.Row="1" ItemsSource="{Binding Products}">

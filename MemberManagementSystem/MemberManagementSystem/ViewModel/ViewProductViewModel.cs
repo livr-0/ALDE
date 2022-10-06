@@ -5,6 +5,7 @@ using MemberManagementSystem.Stores;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using MemberManagementSystem.Commands;
 using System.Windows.Input;
 
 namespace MemberManagementSystem.ViewModel
@@ -17,10 +18,11 @@ namespace MemberManagementSystem.ViewModel
         public ICommand HomePage { get; }
         public ICommand UpdateProductPage { get; }
         public ICommand ClearSearch { get; }
-        public SortProductCommand Sort { get; }
-        public IEnumerable<SortProductCommand.Options> SortOptions { get; }
-        public string OptionName { get; }
-        public SortProductCommand.Options SortOption { get; }
+        public ICommand Sort { get; }
+
+        private IEnumerable<SortProductCommand.Option> _options;
+        public IEnumerable<SortProductCommand.Option> Options => _options;
+        public SortProductCommand.Option Option { get; }
 
         public ViewProductViewModel(Book<Product> productBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory)
         {
@@ -31,8 +33,6 @@ namespace MemberManagementSystem.ViewModel
 
             ClearSearch = new ResetRecordViewStoreCommand<Product>(_productStore, _productBook, recordViewModelFactory);
             ClearSearch.Execute(null);
-
-            Sort = new SortProductCommand();
         }
 
         //private void GatherProductViews(Book<Product> productBook)

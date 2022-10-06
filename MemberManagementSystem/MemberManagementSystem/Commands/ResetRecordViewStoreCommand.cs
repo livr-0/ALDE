@@ -24,12 +24,33 @@ namespace MemberManagementSystem.Commands
 
         public override void Execute(object? parameter)
         {
-                _recordStore.ClearRecords();
-                IEnumerable<T> sales = _recordBook.Records;
-                foreach (T s in sales)
+            _recordStore.ClearRecords();
+            IEnumerable<T> records = _recordBook.Records;
+
+            foreach (T record in records)
+            {
+                bool active = true;
+
+                if (record.GetType() == typeof(Product))
                 {
-                    _recordStore.AddRecordViewModel(_facotry.CreateRecordViewModel(s));
+                    if ((record as Product).ActiveStatus == false)
+                    {
+                        active = false;
+                    }
                 }
+                else if (record.GetType() == typeof(Member))
+                {
+                    if ((record as Member).ActiveStatus == false)
+                    {
+                        active = false;
+                    }
+                }
+
+                if (active)
+                {
+                    _recordStore.AddRecordViewModel(_facotry.CreateRecordViewModel(record));
+                }
+            }
         }
     }
 }

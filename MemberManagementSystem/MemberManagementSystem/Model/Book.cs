@@ -49,17 +49,17 @@ namespace MemberManagementSystem.Model
         {
             if (_records.ContainsKey(newR.ID))
             {
-                if (newR.GetType() == typeof(Sales))
-                {
-                    _records.Remove(newR.ID);
-                }
-                else if (newR.GetType() == typeof(Product))
+                if (newR.GetType() == typeof(Product))
                 {
                     (newR as Product).ActiveStatus = false;
                 }
                 else if (newR.GetType() == typeof(Member))
                 {
                     (newR as Member).ActiveStatus = false;
+                }
+                else
+                {
+                    _records.Remove(newR.ID);
                 }
             }
         }

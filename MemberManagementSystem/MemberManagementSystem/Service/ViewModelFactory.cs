@@ -17,20 +17,20 @@ namespace MemberManagementSystem.Service
         private NavigateService _navService;
         private Book<Member> _memberBook;
         private Book<Product> _productBook;
-
         private Book<Sales> _salesBook;
-
+        private readonly Book<User> _userBook;
         private RecordViewModelFactory _recordViewModelFactory;
 
         /// <summary>
         /// Any paramters that may be needed for a new viewmodel needto be passed into ViewModelFacotryConstructed
         /// </summary>
-        public ViewModelFactory(NavigateService navService, Book<Member> memberBook, Book<Product> productBook, Book<Sales> salesBook)
+        public ViewModelFactory(NavigateService navService, Book<Member> memberBook, Book<Product> productBook, Book<Sales> salesBook, Book<User> userBook)
         {
             _navService = navService;
             _memberBook = memberBook;   
             _productBook = productBook;
             _salesBook = salesBook;
+            _userBook = userBook;
             _recordViewModelFactory = new RecordViewModelFactory(memberBook, productBook, salesBook);
         }
 
@@ -73,7 +73,7 @@ namespace MemberManagementSystem.Service
 
         private ViewModelBase CreateAdduserViewModel()
         {
-           return new AddUserViewModel();
+           return new AddUserViewModel(_navService,_userBook);
         }
 
         private ViewModelBase CreateViewSalesViewModel()

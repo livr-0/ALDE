@@ -63,9 +63,9 @@
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <ComboBox Grid.Column="1"  ItemsSource="{Binding Perms}" SelectedItem="{Binding SelectedPerm}"/>
+            <ComboBox Grid.Column="1"  ItemsSource="{Binding Positions}" SelectedItem="{Binding SelectedPos}"/>
         </Grid>
-        <Button Grid.Row="11" Content="Submit" Command="{Binding SubmitMember}"/>
+        <Button Grid.Row="11" Content="Submit" Command="{Binding SubmitUser}"/>
 
 
     </Grid>

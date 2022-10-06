@@ -1,4 +1,6 @@
-﻿using MemberManagementSystem.Service;
+﻿using MemberManagementSystem.Commands;
+using MemberManagementSystem.Model;
+using MemberManagementSystem.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,8 @@ namespace MemberManagementSystem.ViewModel
 {
     internal class AddUserViewModel : ViewModelBase
     {
+        private Book<User> _userBook;
+
         private string _holder;
 
         public string Holder
@@ -45,35 +49,35 @@ namespace MemberManagementSystem.ViewModel
             }
         }
 
-        //private Permission _selectedperm;
+        private User.StaffPosition _selectedPos;
 
-        //public Permission SelectedPerm
-        //{
-        //    get { return _selectedperm; }
-        //    set
-        //    {
-        //        _selectedperm = value;
-        //        OnPropertyChanged(nameof(SelectedPerm));
-        //    }
-        //}
+        public User.StaffPosition SelectedPos
+        {
+            get { return _selectedPos; }
+            set
+            {
+                _selectedPos = value;
+                OnPropertyChanged(nameof(SelectedPos));
+            }
+        }
 
-        //IEnumerable<Permssion> Perms {get;}
+        public IEnumerable<User.StaffPosition> Positions { get; }
 
 
-        //public AddUserViewModel(NavigateService navService, Book<User> userBook)
-        //{
-        //        _userBook = userBook;
-        //        HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
-        //        SubmitUser = new AddRecordCommand<Member>(userBook, CreateUser);
-                  //Perms = new List<Perms>() {};
-        //}
+        public AddUserViewModel(NavigateService navService, Book<User> userBook)
+        {
+            _userBook = userBook;
+            HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
+            SubmitUser = new AddRecordCommand<User>(userBook, CreateUser);
+            Positions = new List<User.StaffPosition>() {User.StaffPosition.Staff,User.StaffPosition.Manager,User.StaffPosition.Owner };
+        }
 
         public ICommand HomePage { get; }
         public ICommand SubmitUser { get; }
 
-        //private User CreateUser()
-        //{
-        //    return new User(_userBook.ID, Name, Holder, Password, Permission,true);
-        //}
+        private User CreateUser()
+        {
+            return new User(_userBook.ID, Name, Password, Holder, SelectedPos, true);
+        }
     }
 }

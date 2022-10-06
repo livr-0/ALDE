@@ -20,6 +20,7 @@ namespace MemberManagementSystem
         private readonly string _memberPath = "../../../Database/MemberDatabase.csv";
         private readonly string _productPath = "../../../Database/ProductDatabase.csv";
         private readonly string _salesPath = "../../../Database/SalesDatabase.csv";
+        private readonly string _userPath = "../../../Database/UserDatabase.csv";
 
 
         private readonly NavigateStore _navStore;
@@ -28,6 +29,7 @@ namespace MemberManagementSystem
         private readonly Book<Member> _memberBook;
         private readonly Book<Product> _productBook;
         private readonly Book<Sales> _salesBook;
+        private readonly Book<User> _userBook;
         public App()
         {
 
@@ -39,10 +41,11 @@ namespace MemberManagementSystem
                 _memberBook = Book<Member>.LoadBook(_memberPath);
                 _productBook = Book<Product>.LoadBook(_productPath);
                 _salesBook = Book<Sales>.LoadBook(_salesPath);
+                _userBook = Book<User>.LoadBook(_userPath);
                 //Creation of Stores and Services            
                 _navStore = new NavigateStore();
                 _navService = new Service.NavigateService(_navStore);
-                _factory = new Service.ViewModelFactory(_navService, _memberBook, _productBook, _salesBook);
+                _factory = new Service.ViewModelFactory(_navService, _memberBook, _productBook, _salesBook, _userBook);
                 _navService.Creator = _factory;
             } catch (System.IO.IOException e)
             {
@@ -61,6 +64,7 @@ namespace MemberManagementSystem
             _memberBook.SaveBook(_memberPath);
             _salesBook.SaveBook(_salesPath);
             _productBook.SaveBook(_productPath);
+            _userBook.SaveBook(_userPath);
         }
 
         protected override void OnStartup(StartupEventArgs e)

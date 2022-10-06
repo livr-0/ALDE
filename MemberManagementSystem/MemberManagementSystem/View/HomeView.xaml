@@ -16,6 +16,8 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="2*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -30,6 +32,7 @@
         <Button Grid.Row="3" Grid.Column="0" Content="Add Member" Command="{Binding AddMemberPage}"/>
         <Button Grid.Row="5" Grid.Column="0" Content="Add Sales" Command="{Binding AddSalesPage}"/>
         <Button Grid.Row="7" Grid.Column="0" Content="Add Product" Command="{Binding AddProductPage}"/>
+        <Button Grid.Row="9" Grid.Column="0" Content="Add User" Command="{Binding AddUserPage}"/>
         <Button Grid.Row="3" Grid.Column="4" Content="View Member" Command="{Binding ViewMemberPage}"/>
         <Button Grid.Row="5" Grid.Column="4" Content="View Sales" Command="{Binding ViewSalesPage}"/>
         <Button Grid.Row="7" Grid.Column="4" Content="View Product" Command="{Binding ViewProductPage}"/>

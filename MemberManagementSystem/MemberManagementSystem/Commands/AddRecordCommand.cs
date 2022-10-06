@@ -20,8 +20,11 @@ namespace MemberManagementSystem.Commands
 
         public override void Execute(object? parameter)
         {
-                T record = _creatRecord();
+            T record = _creatRecord();
+            if (record != null)
+            {
                 _book.AddRecord(record);
+            }
         }
     }
 }

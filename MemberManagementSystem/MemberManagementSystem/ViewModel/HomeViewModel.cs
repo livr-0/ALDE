@@ -15,6 +15,7 @@ namespace MemberManagementSystem.ViewModel
         public ICommand AddMemberPage{ get; }
         public ICommand AddSalesPage { get; }
         public ICommand AddProductPage { get; }
+        public ICommand AddUserPage { get; }
         public ICommand ViewMemberPage { get; }
         public ICommand ViewSalesPage { get; }
         public ICommand ViewProductPage { get; }
@@ -24,6 +25,8 @@ namespace MemberManagementSystem.ViewModel
             AddMemberPage = new NavigateCommand(navService, nameof(AddMemberViewModel));
             AddSalesPage = new NavigateCommand(navService, nameof(AddSalesViewModel));
             AddProductPage = new NavigateCommand(navService, nameof(AddProductViewModel));
+            AddUserPage = new NavigateCommand(navService, nameof(AddUserViewModel));
+
             ViewMemberPage = new NavigateCommand(navService, nameof(ViewMemberViewModel));
             ViewSalesPage = new NavigateCommand(navService, nameof(ViewSalesViewModel));
             ViewProductPage = new NavigateCommand(navService, nameof(ViewProductViewModel));

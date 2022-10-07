@@ -4,6 +4,7 @@ using MemberManagementSystem.Service;
 using System;
 using System.Windows.Input;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace MemberManagementSystem.ViewModel
 {
@@ -184,14 +185,24 @@ namespace MemberManagementSystem.ViewModel
                 float price = float.Parse(Price);
                 int quantity = int.Parse(Quantity);
 
-                SubmitMsgColor = "Green";
-                SubmitMsg = "Record Created";
-                return new Product(_productBook.ID, Name, Description, price, quantity, true);
+                Product newProduct = new Product(_productBook.ID, Name, Description, price, quantity, true);
+
+                if(_productBook.RecordExists(newProduct))
+                {
+                    SubmitMsgColor = "Red";
+                    SubmitMsg = "Product already exists";
+                }
+                else
+                {
+                    SubmitMsgColor = "Green";
+                    SubmitMsg = "Product Created";
+                    return newProduct;
+                }
             }
             else
             {
                 SubmitMsgColor = "Red";
-                SubmitMsg = "Failed to create record.";
+                SubmitMsg = "Failed to create Product";
             }
 
             return null;

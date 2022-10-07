@@ -27,7 +27,17 @@ namespace MemberManagementSystem.Model
         {
             if (!_records.ContainsKey(newR.ID))
             {
-                _records.Add(newR.ID, newR);
+                IEnumerable<T> matchRecords = GetRecordsbyExactName(newR.Name);
+                if (matchRecords.Any())
+                {
+                    newR.ID = matchRecords.First().ID;
+                    var indexOfOld = _records.FirstOrDefault(r => r.Value.ID == newR.ID);
+                    _records.Add(indexOfOld.Key, newR);
+                }
+                else
+                {
+                    _records.Add(newR.ID, newR);
+                }
             }
             //bool isNew = true;
             //foreach (T existingProduct in _records.Values)
@@ -75,6 +85,13 @@ namespace MemberManagementSystem.Model
                 r.Name.ToLower().Contains(name.ToLower()) 
                 ));
         }
+        public IEnumerable<T> GetRecordsbyExactName(string name)
+        {
+            return _records.Values.Where(r => (
+                r.Name.ToLower().Equals(name.ToLower())
+                ));
+        }
+
         //public IEnumerable<T> GetRecord(int id)
         //{
         //    return _records.Where(_record => _record.ID == id);
@@ -88,6 +105,29 @@ namespace MemberManagementSystem.Model
             }
             return null;
            
+        }
+
+        public bool RecordExists(T checkRecord)
+        {
+            foreach (var record in _records)
+            {
+                if(record.Value.Conflict(checkRecord))
+                {
+                    if (record.Value.GetType() == typeof(Product) && (record.Value as Product).ActiveStatus == true)
+                    {
+                        return true;
+                    }
+                    else if (record.Value.GetType() == typeof(Member) && (record.Value as Member).ActiveStatus == true)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
         //public void SwapRecord(T newRecord)

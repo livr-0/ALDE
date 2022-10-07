@@ -18,7 +18,7 @@ namespace MemberManagementSystem.Model
         {
             if (r != null)
             {
-                if (ID == r.ID && Name == r.Name)
+                if (ID == r.ID || Name == r.Name)
                 {
                     return true;
                 }

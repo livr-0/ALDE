@@ -26,7 +26,6 @@ namespace MemberManagementSystem.ViewModel
             set { _memberSearch = value; OnPropertyChanged(nameof(MemberSearch)); }
         }
 
-
         public ICommand HomePage { get; }
 
         public ICommand UpdateSalesPage { get; }

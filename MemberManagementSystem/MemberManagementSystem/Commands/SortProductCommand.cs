@@ -18,20 +18,27 @@ namespace MemberManagementSystem.Commands
         private RecordViewModelStore _productStore;
         private RecordViewModelFactory _factory;
         private ViewProductViewModel _viewProductViewModel;
-        public SortProductCommand(Book<Sales> s, Book<Product> p, RecordViewModelStore ps, RecordViewModelFactory f, ViewProductViewModel v)
+        private List<Option> _options;
+        public SortProductCommand(Book<Product> p, RecordViewModelStore ps, RecordViewModelFactory f, ViewProductViewModel v)
         {
-            _salesBook = s;
+            // _salesBook = s;
             _productBook = p;
             _productStore = ps;
             _factory = f;
             _viewProductViewModel = v;
+            _options = new List<Option>();
+            _options.Add(new SortByLeastRevenue());
+            _options.Add(new SortByMostRevenue());
+            _options.Add(new SortByLeastSales());
+            _options.Add(new SortByMostSales());
         }
+
+        public List<Option> Options => _options;
 
         internal abstract class Option
         {
             protected string _name;
             public Option() { }
-
             public string Name => _name;
             public abstract void Sort();
         }
@@ -42,8 +49,6 @@ namespace MemberManagementSystem.Commands
             {
                 _name = "Most Revenue";
             }
-
-            public string Name => _name;
             public override void Sort()
             {
 

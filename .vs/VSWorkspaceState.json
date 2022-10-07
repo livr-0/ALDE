@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MemberManagementSystem",
+    "\\MemberManagementSystem\\MemberManagementSystem",
+    "\\MemberManagementSystem\\MemberManagementSystem\\Model"
   ],
+  "SelectedNode": "\\MemberManagementSystem\\MemberManagementSystem\\Model\\Book.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -20,9 +20,15 @@ namespace MemberManagementSystem.ViewModel
         public ICommand ClearSearch { get; }
         public ICommand Sort { get; }
 
-        private IEnumerable<SortProductCommand.Option> _options;
+        private List<SortProductCommand.Option> _options;
         public IEnumerable<SortProductCommand.Option> Options => _options;
-        public SortProductCommand.Option Option { get; }
+
+        private SortProductCommand.Option _option;
+        public SortProductCommand.Option Option
+        {
+            get { return _option; }
+            set { _option = value; OnPropertyChanged(nameof(Option)); }
+        }
 
         public ViewProductViewModel(Book<Product> productBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory)
         {
@@ -33,6 +39,10 @@ namespace MemberManagementSystem.ViewModel
 
             ClearSearch = new ResetRecordViewStoreCommand<Product>(_productStore, _productBook, recordViewModelFactory);
             ClearSearch.Execute(null);
+
+            SortProductCommand cmd = new SortProductCommand(_productBook, _productStore, recordViewModelFactory, this);
+            Sort = cmd;
+            _options = cmd.Options;
         }
 
         //private void GatherProductViews(Book<Product> productBook)

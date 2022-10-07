@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj": {}
+    "C:\\Users\\Andy\\Documents\\sWINBURNE sOFTWARE eNG\\Year 2 Semester 2\\SWE20001 Managing Software Projects\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj": {
+    "C:\\Users\\Andy\\Documents\\sWINBURNE sOFTWARE eNG\\Year 2 Semester 2\\SWE20001 Managing Software Projects\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Andy\\Documents\\sWINBURNE sOFTWARE eNG\\Year 2 Semester 2\\SWE20001 Managing Software Projects\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
         "projectName": "MemberManagementSystem",
-        "projectPath": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
-        "packagesPath": "C:\\Users\\linhv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\",
+        "projectPath": "C:\\Users\\Andy\\Documents\\sWINBURNE sOFTWARE eNG\\Year 2 Semester 2\\SWE20001 Managing Software Projects\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
+        "packagesPath": "C:\\Users\\Andy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Andy\\Documents\\sWINBURNE sOFTWARE eNG\\Year 2 Semester 2\\SWE20001 Managing Software Projects\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\linhv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

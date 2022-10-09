@@ -11,6 +11,7 @@ using MemberManagementSystem.ViewModel;
 
 namespace MemberManagementSystem.Commands
 {
+    // Sorting algorithm: quick sort;
     internal class SortProductCommand : CommandBase
     {
         private Book<Sales> _salesBook;
@@ -19,99 +20,175 @@ namespace MemberManagementSystem.Commands
         private RecordViewModelFactory _factory;
         private ViewProductViewModel _viewProductViewModel;
         private List<Option> _options;
-        public SortProductCommand(Book<Product> p, RecordViewModelStore ps, RecordViewModelFactory f, ViewProductViewModel v)
+        public SortProductCommand(Book<Sales> s, Book<Product> p, RecordViewModelStore ps, RecordViewModelFactory f, ViewProductViewModel v)
         {
-            // _salesBook = s;
+            _salesBook = s;
             _productBook = p;
             _productStore = ps;
             _factory = f;
             _viewProductViewModel = v;
+
             _options = new List<Option>();
-            _options.Add(new SortByLeastRevenue());
-            _options.Add(new SortByMostRevenue());
-            _options.Add(new SortByLeastSales());
-            _options.Add(new SortByMostSales());
+            _options.Add(new SortByLeastRevenue(_productBook, _salesBook));
+            _options.Add(new SortByMostRevenue(_productBook, _salesBook));
+            _options.Add(new SortByLeastSales(_productBook, _salesBook));
+            _options.Add(new SortByMostSales(_productBook, _salesBook));
         }
 
         public List<Option> Options => _options;
 
+        public override void Execute(object? parameter)
+        {
+            Option o = _viewProductViewModel.Option;
+            Dictionary<int, float> sortedProductList = o.SortedList;
+
+            _productStore.ClearRecords();
+
+            foreach (int pID in sortedProductList.Keys)
+            {
+                IEnumerable<Product> products = _productBook.Records.Where(p => p.ID == pID);
+                foreach (Product prod in products)
+                {
+                    _productStore.AddRecordViewModel(_factory.CreateRecordViewModel(prod));
+                }
+            }
+        }
+
         internal abstract class Option
         {
             protected string _name;
-            public Option() { }
+            protected Book<Product> _pBook;
+            protected Book<Sales> _sBook;
+            protected Dictionary<int, float> _sortedList;
+            public Option(Book<Product> pBook, Book<Sales> sBook)
+            {
+                _pBook = pBook;
+                _sBook = sBook;
+                _sortedList = new Dictionary<int, float>();
+            }
             public string Name => _name;
             public abstract void Sort();
+
+            public Dictionary<int, float> SortedList
+            {
+                get
+                {
+                    Sort();
+                    return _sortedList;
+                }
+            }
         }
 
         internal class SortByMostRevenue : Option
         {
-            public SortByMostRevenue()
+            public SortByMostRevenue(Book<Product> pBook, Book<Sales> sBook) : base(pBook, sBook)
             {
                 _name = "Most Revenue";
             }
             public override void Sort()
             {
+                _sortedList.Clear();
+                IEnumerable<Product> products = _pBook.Records;
 
+                foreach (Product p in products)
+                {
+                    _sortedList.Add(p.ID, Count(p.ID));
+                }
+
+                _sortedList = _sortedList.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
             }
 
-            public virtual void Order() { }
-        }
+            public int Count(int pID)
+            {
+                IEnumerable<Sales> sales = _sBook.Records;
+                int count = 0;
 
+                foreach (Sales s in sales)
+                {
+                    if (s.ProductID == pID)
+                    {
+                        count += s.Quantity;
+                    }
+                }
+
+                return count;
+            }
+        }
         internal class SortByLeastRevenue : SortByMostRevenue
         {
-            public SortByLeastRevenue()
+            public SortByLeastRevenue(Book<Product> pBook, Book<Sales> sBook) : base(pBook, sBook)
             {
                 _name = "Least Revenue";
             }
             public override void Sort()
             {
+                _sortedList.Clear();
+                IEnumerable<Product> products = _pBook.Records;
 
+                foreach (Product p in products)
+                {
+                    _sortedList.Add(p.ID, Count(p.ID));
+                }
+
+                _sortedList = _sortedList.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
             }
-
-            public override void Order() { }
         }
 
         internal class SortByMostSales : Option
         {
-            public SortByMostSales()
+            public SortByMostSales(Book<Product> pBook, Book<Sales> sBook) : base(pBook, sBook)
             {
                 _name = "Most Sales";
             }
 
             public override void Sort()
             {
+                IEnumerable<Product> products = _pBook.Records;
+                _sortedList.Clear();
 
+                foreach (Product p in products)
+                {
+                    _sortedList.Add(p.ID, Calculate(p.ID, p.Price));
+                }
+
+                _sortedList = _sortedList.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
             }
 
-            public virtual void Order() { }
+            public float Calculate(int pID, float pPrice)
+            {
+                IEnumerable<Sales> sales = _sBook.Records;
+                float revenue = 0;
+
+                foreach (Sales s in sales)
+                {
+                    if (s.ID == pID)
+                    {
+                        revenue += pPrice * s.Quantity;
+                    }
+                }
+
+                return revenue;
+            }
         }
 
         internal class SortByLeastSales : SortByMostSales
         {
-            public SortByLeastSales()
+            public SortByLeastSales(Book<Product> pBook, Book<Sales> sBook) : base(pBook, sBook)
             {
                 _name = "Least Sales";
             }
 
             public override void Sort()
             {
+                IEnumerable<Product> products = _pBook.Records;
+                _sortedList.Clear();
 
-            }
+                foreach (Product p in products)
+                {
+                    _sortedList.Add(p.ID, Calculate(p.ID, p.Price));
+                }
 
-            public override void Order() { }
-        }
-
-
-        public override void Execute(object? parameter)
-        {
-            try
-            {
-                Option o = _viewProductViewModel.Option;
-                o.Sort();
-            }
-            catch(Exception)
-            {
-                // Error handling here
+                _sortedList = _sortedList.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
             }
         }
     }

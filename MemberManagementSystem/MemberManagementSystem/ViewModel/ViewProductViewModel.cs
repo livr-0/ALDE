@@ -30,7 +30,7 @@ namespace MemberManagementSystem.ViewModel
             set { _option = value; OnPropertyChanged(nameof(Option)); }
         }
 
-        public ViewProductViewModel(Book<Product> productBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory)
+        public ViewProductViewModel(Book<Sales> s, Book<Product> productBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory)
         {
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
             UpdateProductPage = new NavigateCommand(navService, nameof(UpdateProductViewModel));
@@ -40,7 +40,7 @@ namespace MemberManagementSystem.ViewModel
             ClearSearch = new ResetRecordViewStoreCommand<Product>(_productStore, _productBook, recordViewModelFactory);
             ClearSearch.Execute(null);
 
-            SortProductCommand cmd = new SortProductCommand(_productBook, _productStore, recordViewModelFactory, this);
+            SortProductCommand cmd = new SortProductCommand(s, _productBook, _productStore, recordViewModelFactory, this);
             Sort = cmd;
             _options = cmd.Options;
         }

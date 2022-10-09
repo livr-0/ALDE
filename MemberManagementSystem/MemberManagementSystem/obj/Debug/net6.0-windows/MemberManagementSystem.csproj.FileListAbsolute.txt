@@ -151,3 +151,5 @@ C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\o
 C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.dll
 C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\refint\MemberManagementSystem.dll
 C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\MemberManagementSystem.pdb
+C:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\LoginView.g.cs
+C:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\View\LoginView.baml

@@ -24,6 +24,7 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Naviagtion Menu"/>
             <Button Grid.Row="0" Grid.Column="1" Content="Home" Command="{Binding HomePage}"/>
@@ -31,6 +32,7 @@
             <Label Grid.Row="0" Grid.Column="4"  Content="Sort by:"/>
             <ComboBox Grid.Column="5"  Width="150" ItemsSource="{Binding Options}" SelectedItem="{Binding Option}" DisplayMemberPath="Name"/>
             <Button Grid.Row="0" Grid.Column="12" Content="Sort" Command="{Binding Sort}"/>
+            <Button Grid.Row="0" Grid.Column="13" Content="Clear" Command="{Binding ClearSearch}" Margin="31,0,-31,0"/>
         </Grid>
         <ListView Grid.Row="1" ItemsSource="{Binding Products}">
             <ListView.View>

@@ -12,7 +12,7 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\jayde\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\linhv\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\linhv\\.nuget\\packages"
     ],
     "configProperties": {

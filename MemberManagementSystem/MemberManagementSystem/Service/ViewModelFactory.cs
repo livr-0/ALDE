@@ -87,7 +87,7 @@ namespace MemberManagementSystem.Service
 
         private ViewModelBase CreateViewProductViewModel()
         {
-            return new ViewProductViewModel(_productBook, _navService, _recordViewModelFactory);
+            return new ViewProductViewModel(_salesBook, _productBook, _navService, _recordViewModelFactory);
         }
 
         private ViewModelBase CreateAddMemberViewModel()

@@ -14,12 +14,14 @@ namespace MemberManagementSystem.Service
         private Book<Product> _productBook;
 
         private Book<Sales> _salesBook;
+        private Book<User> _userBook;
 
-        public RecordViewModelFactory(Book<Member> memberBook, Book<Product> productBook, Book<Sales> salesBook)
+        public RecordViewModelFactory(Book<Member> memberBook, Book<Product> productBook, Book<Sales> salesBook, Book<User> userBook)
         {
             _memberBook = memberBook;
             _productBook = productBook;
             _salesBook = salesBook;
+            _userBook = userBook;
         }
         public ViewModelBase CreateRecordViewModel(Record r)
         {
@@ -32,6 +34,8 @@ namespace MemberManagementSystem.Service
                     return new MemberViewModel((Member)r);
                 case nameof(MemberManagementSystem.Model.Product):
                     return new ProductViewModel((Product)r);
+                case nameof(MemberManagementSystem.Model.User):
+                    return new UserViewModel((User)r);
             }
             throw new ArgumentException(r.GetType().ToString() + " is not a record type");
         }

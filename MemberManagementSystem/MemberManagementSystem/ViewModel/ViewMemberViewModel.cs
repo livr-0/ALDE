@@ -26,7 +26,6 @@ namespace MemberManagementSystem.ViewModel
             UpdateMemberPage = new NavigateCommand(navService, nameof(UpdateMemberViewModel));
             _memberStore = new RecordViewModelStore();
             _memberBook = memberBook;
-            _memberStore = new RecordViewModelStore();
             ClearSearch = new ResetRecordViewStoreCommand<Member>(_memberStore, _memberBook, recordViewModelFactory);
             ClearSearch.Execute(null);
         }

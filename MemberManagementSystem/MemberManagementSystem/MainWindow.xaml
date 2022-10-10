@@ -30,6 +30,9 @@
             <DataTemplate DataType="{x:Type vm:ViewMemberViewModel}">
                 <view:ViewMemberView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:ViewUserViewModel}">
+                <view:ViewUserView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type vm:UpdateProductViewModel}">
                 <view:UpdateProductView/>
             </DataTemplate>

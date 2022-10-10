@@ -19,6 +19,7 @@ namespace MemberManagementSystem.ViewModel
         public ICommand ViewMemberPage { get; }
         public ICommand ViewSalesPage { get; }
         public ICommand ViewProductPage { get; }
+        public ICommand ViewUserPage { get; }
 
         public HomeViewModel(NavigateService navService)
         {
@@ -30,6 +31,7 @@ namespace MemberManagementSystem.ViewModel
             ViewMemberPage = new NavigateCommand(navService, nameof(ViewMemberViewModel));
             ViewSalesPage = new NavigateCommand(navService, nameof(ViewSalesViewModel));
             ViewProductPage = new NavigateCommand(navService, nameof(ViewProductViewModel));
+            ViewUserPage = new NavigateCommand(navService, nameof(ViewUserViewModel));
         }
     }
 }

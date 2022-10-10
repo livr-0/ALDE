@@ -31,7 +31,7 @@ namespace MemberManagementSystem.Service
             _productBook = productBook;
             _salesBook = salesBook;
             _userBook = userBook;
-            _recordViewModelFactory = new RecordViewModelFactory(memberBook, productBook, salesBook);
+            _recordViewModelFactory = new RecordViewModelFactory(memberBook, productBook, salesBook, userBook);
         }
 
         /// <summary>
@@ -60,6 +60,8 @@ namespace MemberManagementSystem.Service
                     return CreateViewProductViewModel();
                 case nameof(ViewMemberViewModel):
                     return CreateViewMemberViewModel();
+                case nameof(ViewUserViewModel):
+                    return CreateViewUserViewModel();
                 case nameof(UpdateProductViewModel):
                     return CreateUpdateProductViewModel();
                 case nameof(UpdateSalesViewModel):
@@ -69,6 +71,11 @@ namespace MemberManagementSystem.Service
             }
 
             throw new ArgumentException(String.Format("{0} is not a type of creatable viewmodel", viewModelName));
+        }
+
+        private ViewModelBase CreateViewUserViewModel()
+        {
+            return new ViewUserViewModel(_userBook,_navService,_recordViewModelFactory);
         }
 
         private ViewModelBase CreateAdduserViewModel()

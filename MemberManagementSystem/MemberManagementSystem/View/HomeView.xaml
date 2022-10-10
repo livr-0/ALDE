@@ -36,6 +36,6 @@
         <Button Grid.Row="3" Grid.Column="4" Content="View Member" Command="{Binding ViewMemberPage}"/>
         <Button Grid.Row="5" Grid.Column="4" Content="View Sales" Command="{Binding ViewSalesPage}"/>
         <Button Grid.Row="7" Grid.Column="4" Content="View Product" Command="{Binding ViewProductPage}"/>
-
+        <Button Grid.Row="9" Grid.Column="4" Content="View User" Command="{Binding ViewUserPage}"/>
     </Grid>
 </UserControl>

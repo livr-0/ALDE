@@ -107,7 +107,7 @@ namespace MemberManagementSystem.Service
         }
 
         private ViewModelBase CreateAddSalesViewModel() {
-            return new AddSalesViewModel(_navService, _salesBook);
+            return new AddSalesViewModel(_navService, _salesBook, _productBook, _memberBook);
         }
 
         private ViewModelBase CreateUpdateProductViewModel()

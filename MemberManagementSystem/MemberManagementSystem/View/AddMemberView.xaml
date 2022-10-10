@@ -18,6 +18,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -36,28 +37,36 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Name"/>
-            <TextBox Grid.Column="1" Width="135" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Width="135" BorderBrush="{Binding NameColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Column="3" Text="{Binding NameError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Email"/>
-            <TextBox Grid.Column="1" Width="135" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Width="135" BorderBrush="{Binding EmailColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Column="3" Text="{Binding EmailError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
         <Grid Grid.Row="7">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Phone"/>
-            <TextBox Grid.Column="1" Width="135" Text="{Binding Phone, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Width="135" BorderBrush="{Binding PhoneColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Text="{Binding Phone, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Column="3" Text="{Binding PhoneError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
-        <Button Grid.Row="9" Content="Submit" Command="{Binding SubmitMember}"/>
-
-
+        <Button Grid.Row="9" Content="Submit" Width="290" HorizontalAlignment="Left" Command="{Binding SubmitMember}"/>
+        <TextBlock Grid.Row="12" Text="{Binding SubmitMsg, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding SubmitMsgColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </UserControl>

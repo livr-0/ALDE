@@ -25,7 +25,7 @@ namespace MemberManagementSystem.Model
 
         public void AddRecord(T newR)
         {
-            if (!_records.ContainsKey(newR.ID))
+            if (newR != null && !_records.ContainsKey(newR.ID))
             {
                 IEnumerable<T> matchRecords = GetRecordsbyExactName(newR.Name);
                 if (matchRecords.Any())

@@ -20,6 +20,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -38,25 +39,34 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Holder"/>
-            <TextBox Grid.Column="1" Width="135" Text="{Binding Holder, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Width="135" BorderBrush="{Binding HolderColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Text="{Binding Holder, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Column="3" Text="{Binding HolderError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Password"/>
-            <TextBox Grid.Column="1" Width="135" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Width="135" BorderBrush="{Binding PasswordColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Column="3" Text="{Binding PasswordError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
         <Grid Grid.Row="7">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Account Name"/>
-            <TextBox Grid.Column="1" Width="135" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Width="135" BorderBrush="{Binding NameColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Column="3" Text="{Binding NameError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
         <Grid Grid.Row="9">
             <Grid.ColumnDefinitions>
@@ -65,8 +75,7 @@
             </Grid.ColumnDefinitions>
             <ComboBox Grid.Column="1"  ItemsSource="{Binding Positions}" SelectedItem="{Binding SelectedPos}"/>
         </Grid>
-        <Button Grid.Row="11" Content="Submit" Command="{Binding SubmitUser}"/>
-
-
+        <Button Grid.Row="11" Content="Submit" Width="290" HorizontalAlignment="Left" Command="{Binding SubmitUser}"/>
+        <TextBlock Grid.Row="12" Text="{Binding SubmitMsg, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding SubmitMsgColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </UserControl>

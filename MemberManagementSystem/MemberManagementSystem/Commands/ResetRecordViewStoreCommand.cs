@@ -33,17 +33,15 @@ namespace MemberManagementSystem.Commands
 
                 if (record.GetType() == typeof(Product))
                 {
-                    if ((record as Product).ActiveStatus == false)
-                    {
-                        active = false;
-                    }
+                    active = (record as Product).ActiveStatus;
                 }
                 else if (record.GetType() == typeof(Member))
                 {
-                    if ((record as Member).ActiveStatus == false)
-                    {
-                        active = false;
-                    }
+                    active = (record as Member).ActiveStatus;
+                }
+                else if (record.GetType() == typeof(User))
+                {
+                    active = (record as User).ActiveStatus;
                 }
 
                 if (active)

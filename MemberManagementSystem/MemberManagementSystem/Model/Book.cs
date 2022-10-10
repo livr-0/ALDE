@@ -67,6 +67,10 @@ namespace MemberManagementSystem.Model
                 {
                     (newR as Member).ActiveStatus = false;
                 }
+                else if (newR.GetType() == typeof(User))
+                {
+                    (newR as User).ActiveStatus = false;
+                }
                 else
                 {
                     _records.Remove(newR.ID);
@@ -118,6 +122,10 @@ namespace MemberManagementSystem.Model
                         return true;
                     }
                     else if (record.Value.GetType() == typeof(Member) && (record.Value as Member).ActiveStatus == true)
+                    {
+                        return true;
+                    }
+                    else if (record.Value.GetType() == typeof(User) && (record.Value as User).ActiveStatus == true)
                     {
                         return true;
                     }

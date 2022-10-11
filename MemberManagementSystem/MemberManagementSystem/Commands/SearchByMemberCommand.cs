@@ -55,6 +55,7 @@ namespace MemberManagementSystem.Commands
                 IEnumerable<Sales> sales = _salesBook.Records.Where(s => s.MemberID == id);
                 foreach (Sales sale in sales)
                 {
+                    _salesStore.AddRecord(sale);
                     _salesStore.AddRecordViewModel(_factory.CreateRecordViewModel(sale));
                 }
             }

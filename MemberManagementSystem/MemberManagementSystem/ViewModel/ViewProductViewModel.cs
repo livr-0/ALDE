@@ -7,6 +7,8 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using MemberManagementSystem.Commands;
 using System.Windows.Input;
+using System.Text.RegularExpressions;
+using System;
 
 namespace MemberManagementSystem.ViewModel
 {
@@ -19,6 +21,12 @@ namespace MemberManagementSystem.ViewModel
         public ICommand UpdateProductPage { get; }
         public ICommand ClearSearch { get; }
         public ICommand Sort { get; }
+        public ICommand Search { get; }
+
+        public String DateRangeFrom { get; }
+        public String DateRangeTo { get; }
+
+        public ICommand Export { get; }
 
         private List<SortProductCommand.Option> _options;
         public IEnumerable<SortProductCommand.Option> Options => _options;
@@ -43,6 +51,8 @@ namespace MemberManagementSystem.ViewModel
             SortProductCommand cmd = new SortProductCommand(s, _productBook, _productStore, recordViewModelFactory, this);
             Sort = cmd;
             _options = cmd.Options;
+
+            Export = new ExportCSVCommand<Product>(_productStore, "Product Report");
         }
 
         //private void GatherProductViews(Book<Product> productBook)

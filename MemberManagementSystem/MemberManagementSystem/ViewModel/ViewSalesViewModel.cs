@@ -32,6 +32,7 @@ namespace MemberManagementSystem.ViewModel
 
         public ICommand ClearSearch { get; }
         public ICommand Search { get; }
+        public ICommand Export { get; }
 
         public ViewSalesViewModel(Book<Sales> salesBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory, Book<Member> memberBook, Book<Product> productBook)
         {
@@ -46,13 +47,7 @@ namespace MemberManagementSystem.ViewModel
             ClearSearch.Execute(null);
 
             Search = new SearchByMemberCommand(memberBook, salesBook, _salesStore, recordViewModelFactory, this);
-            
-            
-            
-
-
-            
-           
+            Export = new ExportCSVCommand<Sales>(_salesStore, "Sales Report");
         }
 
        

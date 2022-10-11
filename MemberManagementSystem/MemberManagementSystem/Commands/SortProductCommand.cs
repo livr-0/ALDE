@@ -11,7 +11,6 @@ using MemberManagementSystem.ViewModel;
 
 namespace MemberManagementSystem.Commands
 {
-    // Sorting algorithm: quick sort;
     internal class SortProductCommand : CommandBase
     {
         private Book<Sales> _salesBook;
@@ -49,6 +48,7 @@ namespace MemberManagementSystem.Commands
                 IEnumerable<Product> products = _productBook.Records.Where(p => p.ID == pID);
                 foreach (Product prod in products)
                 {
+                    _productStore.AddRecord(prod);
                     _productStore.AddRecordViewModel(_factory.CreateRecordViewModel(prod));
                 }
             }

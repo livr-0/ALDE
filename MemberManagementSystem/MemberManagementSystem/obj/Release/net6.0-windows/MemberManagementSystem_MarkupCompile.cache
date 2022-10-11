@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 C:\Users\linhv\source\repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\App.xaml
-13-183697945
+15-1783167015
 
-55-1017305739
+60-1979656595
 194-1103864946
-MainWindow.xaml;View\AddMemberView.xaml;View\AddProductView.xaml;View\AddSalesView.xaml;View\AddUserView.xaml;View\HomeView.xaml;View\LoginView.xaml;View\UpdateMemberView.xaml;View\UpdateProductView.xaml;View\UpdateSalesView.xaml;View\ViewMemberView.xaml;View\ViewProductView.xaml;View\ViewSalesView.xaml;
+MainWindow.xaml;View\AddMemberView.xaml;View\AddProductView.xaml;View\AddSalesView.xaml;View\AddUserView.xaml;View\HomeView.xaml;View\LoginView.xaml;View\UpdateMemberView.xaml;View\UpdateProductView.xaml;View\UpdateSalesView.xaml;View\UpdateUserView.xaml;View\ViewMemberView.xaml;View\ViewProductView.xaml;View\ViewSalesView.xaml;View\ViewUserView.xaml;
 
 True
 

@@ -227,7 +227,7 @@ namespace MemberManagementSystem.ViewModel
             else
             {
                 SubmitMsgColor = "Red";
-                SubmitMsg = "Failed to update Member.\nIf original data is needed, reselect product.";
+                SubmitMsg = "Failed to update Member.\nIf original data is needed, reselect member.";
             }
 
 
@@ -235,10 +235,6 @@ namespace MemberManagementSystem.ViewModel
 
         private void RemoveMember()
         {
-            if (SelectedMember != null)
-            {
-                _memberBook.RemoveRecord(SelectedMember.Member);
-            }
             if (SelectedMember != null)
             {
                 MemberColor = "Gray";

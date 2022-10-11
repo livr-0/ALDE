@@ -24,6 +24,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -42,51 +43,68 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Pick User"/>
-            <ComboBox Grid.Column="1"  ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUserViewModel}" DisplayMemberPath="IDName"/>
+            <ComboBox Grid.Column="1" BorderBrush="{Binding NameColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUserViewModel}" DisplayMemberPath="IDName"/>
+            <TextBlock Grid.Column="3" Text="{Binding UserError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="User ID"/>
-            <TextBlock Grid.Column="1" Width="135" Text="{Binding SelectedUserViewModel.ID}"/>
+            <TextBlock Grid.Column="1" Width="135"  Text="{Binding SelectedUserViewModel.ID}"/>
         </Grid>
         <Grid Grid.Row="7">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Name"/>
-            <TextBox Grid.Column="1" Width="135" Text="{Binding Name, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Width="135" BorderBrush="{Binding NameColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Text="{Binding Name, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Column="3" Text="{Binding NameError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
         <Grid Grid.Row="9">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Holder"/>
-            <TextBox Grid.Column="1" Width="135" Text="{Binding Holder, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Width="135" BorderBrush="{Binding HolderColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Text="{Binding Holder, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Column="3" Text="{Binding HolderError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
         <Grid Grid.Row="11">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Password"/>
-            <TextBox Grid.Column="1" Width="135" Text="{Binding Password, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Width="135" BorderBrush="{Binding PasswordColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Text="{Binding Password, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Column="3" Text="{Binding PasswordError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
         <Grid Grid.Row="13">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Select Positon"/>
             <ComboBox Grid.Column="1"  ItemsSource="{Binding Positions}" SelectedItem="{Binding SelectedPos}"/>
         </Grid>
         <Button Grid.Row="15" Content="Submit" Command="{Binding AlterUser}"/>
-        <Button Grid.Row="16" Grid.Column="1" Content="Delete" Command="{Binding DeleteUser}"/>
+        <Button Grid.Row="15" Grid.Column="1" Content="Delete" Command="{Binding DeleteUser}"/>
+        <TextBlock Grid.Row="16" Text="{Binding SubmitMsg, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding SubmitMsgColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </UserControl>

@@ -122,7 +122,7 @@ namespace MemberManagementSystem.ViewModel
             {
                 inputCorrect = false;
                 EmailColor = "Red";
-                EmailError = "Please enter product a proper email.";
+                EmailError = "Please enter a proper email.";
             }
             else
             {

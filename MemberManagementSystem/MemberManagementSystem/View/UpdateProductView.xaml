@@ -47,7 +47,8 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Pick Product"/>
-            <ComboBox Grid.Column="1"  ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" DisplayMemberPath="IDName"/>
+            <ComboBox Grid.Column="1" BorderBrush="{Binding ProductColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" DisplayMemberPath="IDName"/>
+            <TextBlock Grid.Column="3" Text="{Binding ProductError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>

@@ -50,6 +50,13 @@ namespace MemberManagementSystem.ViewModel
             set { _quantity = value; OnPropertyChanged(nameof(Quantity)); }
         }
 
+        private string _productColor = "Gray";
+        public string ProductColor
+        {
+            get { return _productColor; }
+            set { _productColor = value; OnPropertyChanged(nameof(ProductColor)); }
+        }
+
         private string _nameColor = "Gray";
         public string NameColor
         {
@@ -79,6 +86,13 @@ namespace MemberManagementSystem.ViewModel
             set { _quantityColor = value; OnPropertyChanged(nameof(QuantityColor)); }
         }
         private Regex _quantityRegex = new Regex("[0-9]*");
+
+        private string _productError = "";
+        public string ProductError
+        {
+            get { return _productError; }
+            set { _productError = value; OnPropertyChanged(nameof(ProductError)); }
+        }
 
         private string _nameError = "";
         public string NameError
@@ -146,21 +160,45 @@ namespace MemberManagementSystem.ViewModel
             IEnumerable<Product> products = productBook.Records; 
             foreach (Product product in products)
             {
-                _product.Add(new ProductViewModel(product));
+                if (product.ActiveStatus)
+                {
+                    _product.Add(new ProductViewModel(product));
+                }
             }
         }
 
         private void updateTextBoxes()
         {
-            Name = SelectedProduct.Name.ToString();
-            Description = SelectedProduct.Description.ToString();
-            Quantity = SelectedProduct.Quantity.ToString();
-            Price = SelectedProduct.Price.ToString();   
+            if (_selectedProduct != null)
+            {
+                Name = SelectedProduct.Name.ToString();
+                Description = SelectedProduct.Description.ToString();
+                Quantity = SelectedProduct.Quantity.ToString();
+                Price = SelectedProduct.Price.ToString();
+            }
+            else
+            {
+                Name = null;
+                Description = null;
+                Quantity = null;
+                Price = null;
+            }
         }
 
         private void UpdateProduct()
         {
             bool inputCorrect = true;
+
+            if (_selectedProduct == null)
+            {
+                ProductColor = "Red";
+                ProductError = "Please Select a Product.";
+            }
+            else
+            {
+                ProductColor = "Gray";
+                ProductError = "";
+            }
 
             if (_name == null)
             {
@@ -229,7 +267,7 @@ namespace MemberManagementSystem.ViewModel
             else
             {
                 SubmitMsgColor = "Red";
-                SubmitMsg = "Failed to update Product.\nIf need original data, reselect product.";
+                SubmitMsg = "Failed to update Product.\nIf original data is needed, reselect product.";
             }
 
 
@@ -239,12 +277,29 @@ namespace MemberManagementSystem.ViewModel
         {
             if(SelectedProduct != null)
             {
+                ProductColor = "Gray";
+                ProductError = "";
+                NameColor = "Gray";
+                NameError = "";
+                DescColor = "Gray";
+                DescError = "";
+                PriceColor = "Gray";
+                PriceError = "";
+                QuantityColor = "Gray";
+                QuantityError = "";
+
                 _productBook.RemoveRecord(SelectedProduct.Product);
+                GatherProductViews(_productBook);
+                SubmitMsgColor = "Green";
+                SubmitMsg = "Product Removed";
             }
             else
             {
+                ProductColor = "Red";
+                ProductError = "Please Select a Product.";
+
                 SubmitMsgColor = "Red";
-                SubmitMsg = "Failed to delete Product";
+                SubmitMsg = "Failed to delete Product.";
             }
         }
     }

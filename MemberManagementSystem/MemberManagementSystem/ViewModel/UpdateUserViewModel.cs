@@ -93,9 +93,9 @@ namespace MemberManagementSystem.ViewModel
 
         private void updateTextBoxes()
         {
-            Name = SelectedUserViewModel.Name.ToString();
-            Holder = SelectedUserViewModel.Holder.ToString();
-            Password = SelectedUserViewModel.Password.ToString();
+            Name = SelectedUserViewModel.Name;
+            Holder = SelectedUserViewModel.Holder;
+            Password = SelectedUserViewModel.Password;
             SelectedPos = SelectedUserViewModel.Position;
         }
 

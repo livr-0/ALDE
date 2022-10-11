@@ -4,6 +4,7 @@ using MemberManagementSystem.Service;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Text.RegularExpressions;
 using System.Windows.Input;
 
 namespace MemberManagementSystem.ViewModel
@@ -49,6 +50,78 @@ namespace MemberManagementSystem.ViewModel
             set { _quantity = value; OnPropertyChanged(nameof(Quantity)); }
         }
 
+        private string _nameColor = "Gray";
+        public string NameColor
+        {
+            get { return _nameColor; }
+            set { _nameColor = value; OnPropertyChanged(nameof(NameColor)); }
+        }
+
+        private string _descColor = "Gray";
+        public string DescColor
+        {
+            get { return _descColor; }
+            set { _descColor = value; OnPropertyChanged(nameof(DescColor)); }
+        }
+
+        private string _priceColor = "Gray";
+        public string PriceColor
+        {
+            get { return _priceColor; }
+            set { _priceColor = value; OnPropertyChanged(nameof(PriceColor)); }
+        }
+        private Regex _priceRegex = new Regex("[0-9]*(.[0-9]{0,2})$");
+
+        private string _quantityColor = "Gray";
+        public string QuantityColor
+        {
+            get { return _quantityColor; }
+            set { _quantityColor = value; OnPropertyChanged(nameof(QuantityColor)); }
+        }
+        private Regex _quantityRegex = new Regex("[0-9]*");
+
+        private string _nameError = "";
+        public string NameError
+        {
+            get { return _nameError; }
+            set { _nameError = value; OnPropertyChanged(nameof(NameError)); }
+        }
+
+        private string _descError = "";
+        public string DescError
+        {
+            get { return _descError; }
+            set { _descError = value; OnPropertyChanged(nameof(DescError)); }
+        }
+
+        private string _priceError = "";
+        public string PriceError
+        {
+            get { return _priceError; }
+            set { _priceError = value; OnPropertyChanged(nameof(PriceError)); }
+        }
+
+        private string _quantityError = "";
+        public string QuantityError
+        {
+            get { return _quantityError; }
+            set { _quantityError = value; OnPropertyChanged(nameof(QuantityError)); }
+        }
+
+        private string _submitMsg = "";
+        public string SubmitMsg
+        {
+            get { return _submitMsg; }
+            set { _submitMsg = value; OnPropertyChanged(nameof(SubmitMsg)); }
+        }
+
+        public string _submitMsgColor = "Red";
+        public string SubmitMsgColor
+        {
+            get { return _submitMsgColor; }
+            set { _submitMsgColor = value; OnPropertyChanged(nameof(SubmitMsgColor)); }
+        }
+
         private ProductViewModel _selectedProduct;
         public ProductViewModel SelectedProduct
         {
@@ -87,7 +160,57 @@ namespace MemberManagementSystem.ViewModel
 
         private void UpdateProduct()
         {
-            if (!string.IsNullOrEmpty(Price) && !string.IsNullOrEmpty(Quantity))
+            bool inputCorrect = true;
+
+            if (_name == null)
+            {
+                inputCorrect = false;
+                NameColor = "Red";
+                NameError = "Please enter product name.";
+            }
+            else
+            {
+                NameColor = "Gray";
+                NameError = "";
+            }
+
+            if (_description == null)
+            {
+                inputCorrect = false;
+                DescColor = "Red";
+                DescError = "Please enter product description.";
+            }
+            else
+            {
+                DescColor = "Gray";
+                DescError = "";
+            }
+
+            if (_price == null || _priceRegex.IsMatch(_price) == false)
+            {
+                inputCorrect = false;
+                PriceColor = "Red";
+                PriceError = "Please enter product price in formats:\n12, 12.3, 15.46";
+            }
+            else
+            {
+                PriceColor = "Gray";
+                PriceError = "";
+            }
+
+            if (_quantity == null || _quantityRegex.IsMatch(_quantity) == false)
+            {
+                inputCorrect = false;
+                QuantityColor = "Red";
+                QuantityError = "Please enter quantity of product.\nAny integer.";
+            }
+            else
+            {
+                QuantityColor = "Gray";
+                QuantityError = "";
+            }
+
+            if (inputCorrect)
             {
                 float price = float.Parse(Price);
                 int quantity = int.Parse(Quantity);
@@ -99,7 +222,14 @@ namespace MemberManagementSystem.ViewModel
                 pChanged.Name = _name;
                 pChanged.Description = _description;
 
-               // _productBook.SwapRecord(pChanged);
+                SubmitMsgColor = "Green";
+                SubmitMsg = "Product Updated";
+                // _productBook.SwapRecord(pChanged);
+            }
+            else
+            {
+                SubmitMsgColor = "Red";
+                SubmitMsg = "Failed to update Product.\nIf need original data, reselect product.";
             }
 
 
@@ -110,6 +240,11 @@ namespace MemberManagementSystem.ViewModel
             if(SelectedProduct != null)
             {
                 _productBook.RemoveRecord(SelectedProduct.Product);
+            }
+            else
+            {
+                SubmitMsgColor = "Red";
+                SubmitMsg = "Failed to delete Product";
             }
         }
     }

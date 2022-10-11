@@ -44,7 +44,7 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Pick User"/>
-            <ComboBox Grid.Column="1"  ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser}" DisplayMemberPath="IDName"/>
+            <ComboBox Grid.Column="1"  ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUserViewModel}" DisplayMemberPath="IDName"/>
         </Grid>
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
@@ -52,7 +52,7 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="User ID"/>
-            <TextBlock Grid.Column="1" Width="135" Text="{Binding SelectedUser.ID}"/>
+            <TextBlock Grid.Column="1" Width="135" Text="{Binding SelectedUserViewModel.ID}"/>
         </Grid>
         <Grid Grid.Row="7">
             <Grid.ColumnDefinitions>

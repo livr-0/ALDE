@@ -39,20 +39,6 @@ namespace MemberManagementSystem.Model
                     _records.Add(newR.ID, newR);
                 }
             }
-            //bool isNew = true;
-            //foreach (T existingProduct in _records.Values)
-            //{
-            //    if (existingProduct.Conflict(newR))
-            //    {
-            //        isNew = false;
-            //        break;
-            //    }
-            //}
-
-            //if (isNew)
-            //{
-            //    _records.Add(newR.ID,newR);
-            //}
         }
 
         public void RemoveRecord(T newR)

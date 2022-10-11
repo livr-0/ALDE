@@ -68,9 +68,16 @@ namespace MemberManagementSystem.Service
                     return CreateUpdateSalesViewModel();
                 case nameof(UpdateMemberViewModel):
                     return CreateUpdateMemberViewModel();
+                case nameof(UpdateUserViewModel):
+                    return CreateUpdateUserViewModel();
             }
 
             throw new ArgumentException(String.Format("{0} is not a type of creatable viewmodel", viewModelName));
+        }
+
+        private ViewModelBase CreateUpdateUserViewModel()
+        {
+            return new UpdateUserViewModel(_userBook, _navService);
         }
 
         private ViewModelBase CreateViewUserViewModel()

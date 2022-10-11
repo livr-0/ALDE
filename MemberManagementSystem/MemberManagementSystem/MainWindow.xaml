@@ -45,6 +45,9 @@
             <DataTemplate DataType="{x:Type vm:AddUserViewModel}">
                 <view:AddUserView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:UpdateUserViewModel}">
+                <view:UpdateUserView/>
+            </DataTemplate>
         </Grid.Resources>
         <ContentControl Content="{Binding CurrentViewModel}"/>
     </Grid>

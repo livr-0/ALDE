@@ -25,7 +25,7 @@ namespace MemberManagementSystem.ViewModel
         public ViewUserViewModel(Book<User> userBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory)
         {
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
-           // UpdateUserPage = new NavigateCommand(navService, nameof(UpdateUserViewModel));
+            UpdateUserPage = new NavigateCommand(navService, nameof(UpdateUserViewModel));
             _userStore = new RecordViewModelStore();
             _userBook = userBook;
             ClearSearch = new ResetRecordViewStoreCommand<User>(_userStore, _userBook, recordViewModelFactory);

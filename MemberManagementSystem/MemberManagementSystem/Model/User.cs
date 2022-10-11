@@ -30,20 +30,7 @@ namespace MemberManagementSystem.Model
         public User(int id, string name, string pass, string holder) : this(id, name, pass, holder, 0, true) { }
 
 
-        /*public bool Sold(int num)
-        {
-            if (_quantity - num > 0)
-            {
-                _quantity = _quantity - num;
-                return true;
-            }
-            return false;
-        }
-
-        public void NewStock(int num)
-        {
-            _quantity = _quantity + num;
-        }*/
+      
 
         public string Password
         {

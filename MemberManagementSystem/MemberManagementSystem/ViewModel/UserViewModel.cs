@@ -19,7 +19,14 @@ namespace MemberManagementSystem.ViewModel
         public string Name => _user.Name;
 
         public string Holder => _user.Holder;
-        public string Position => _user.Position.ToString();
+        public User.StaffPosition Position => _user.Position;
+
+        public string Password => _user.Password;
+
+        public string IDName
+        {
+            get { return _user.ID.ToString() + " - " + _user.Name.ToString(); }
+        }
 
         public UserViewModel(User user)
         {

@@ -37,7 +37,7 @@ namespace MemberManagementSystem.ViewModel
             get { return _selectedMember; }
             set
             {
-                _selectedMember = value; OnPropertyChanged("SelectedProduct");
+                _selectedMember = value; OnPropertyChanged("SelectedMember");
             }
         }
 
@@ -222,21 +222,8 @@ namespace MemberManagementSystem.ViewModel
             }
             else
             {
-                if (SelectedProduct != null && int.Parse(Quantity) > SelectedProduct.Product.Quantity)
-                {
-                    if (int.Parse(Quantity) > SelectedProduct.Product.Quantity || int.Parse(Quantity) <= 0)
-                    {
-                        inputCorrect = false;
-                        QuantityColor = "Red";
-                        QuantityError = "Please enter quantity of product.\nIn the range [1,"
-                            + SelectedProduct.Product.Quantity + "].";
-                    }
-                }
-                else
-                {
-                    QuantityColor = "Gray";
-                    QuantityError = "";
-                }
+                QuantityColor = "Gray";
+                QuantityError = "";
             }
 
             if (inputCorrect)

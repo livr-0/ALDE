@@ -76,7 +76,6 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Quantity"/>
-            <TextBox Grid.Column="1" Width="135" PreviewTextInput="NumberOnly" Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBox Grid.Column="1" Width="135" BorderBrush="{Binding QuantityColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="NumberOnly" Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock Grid.Column="3" Text="{Binding QuantityError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>

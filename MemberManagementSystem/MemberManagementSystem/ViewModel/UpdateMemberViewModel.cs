@@ -167,6 +167,7 @@ namespace MemberManagementSystem.ViewModel
 
             if (_selectedMember == null)
             {
+                inputCorrect = false;
                 MemberColor = "Red";
                 MemberError = "Please Select a Product.";
             }

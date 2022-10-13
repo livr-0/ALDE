@@ -24,6 +24,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -42,43 +43,59 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Pick Sales"/>
-            <ComboBox Grid.Column="1"  ItemsSource="{Binding Sales}" SelectedItem="{Binding SelectedSales}" DisplayMemberPath="SalesID"/>
+            <ComboBox Grid.Column="1" BorderBrush="{Binding SalesColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Sales}" SelectedItem="{Binding SelectedSales}" DisplayMemberPath="SalesID"/>
+            <TextBlock Grid.Column="3" Text="{Binding SalesError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Product"/>
-            <TextBox Grid.Column="1" Width="135" Text="{Binding ProductID, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
+            <ComboBox Grid.Column="1" BorderBrush="{Binding ProductColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" DisplayMemberPath="IDName"/>
+            <TextBlock Grid.Column="3" Text="{Binding ProductError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
         <Grid Grid.Row="7">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Member"/>
-            <TextBox Grid.Column="1" Width="135" Text="{Binding MemberID, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
+            <ComboBox Grid.Column="1" BorderBrush="{Binding MemberColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Members}" SelectedItem="{Binding SelectedMember}" DisplayMemberPath="IDName"/>
+            <TextBlock Grid.Column="3" Text="{Binding MemberError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
         <Grid Grid.Row="9">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Date Time"/>
-            <TextBox Grid.Column="1" Width="135" PreviewTextInput="DateTimeOnly" Text="{Binding DateTime, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Width="135" BorderBrush="{Binding DateTimeColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="DateTimeOnly" Text="{Binding DateTime, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Column="3" Text="{Binding DateTimeError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
         <Grid Grid.Row="11">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Enter Quantity"/>
-            <TextBox Grid.Column="1" Width="135" PreviewTextInput="NumberOnly" Text="{Binding Quantity, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Width="135" BorderBrush="{Binding QuantityColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="NumberOnly" Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Column="3" Text="{Binding QuantityError, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
         </Grid>
-        <Button Grid.Row="15" Grid.Column="0" Content="Submit" Command="{Binding AlterSales}"/>
+        <Button Grid.Row="15" Grid.Column="0" Width="290" HorizontalAlignment="Left" Content="Submit" Command="{Binding AlterSales}"/>
         <Button Grid.Row="15" Grid.Column="1" Content="Delete" Command="{Binding DeleteSales}"/>
+        <TextBlock Grid.Row="16" Text="{Binding SubmitMsg, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding SubmitMsgColor, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </UserControl>

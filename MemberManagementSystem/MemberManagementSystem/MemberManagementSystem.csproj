@@ -43,6 +43,7 @@
 
   <ItemGroup>
     <Folder Include="Reports\" />
+    <Folder Include="Reports\" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,15 @@ namespace MemberManagementSystem.Commands
         public override void Execute(object? parameter)
         {
             Option o = _viewProductViewModel.Option;
-            Dictionary<int, float> sortedProductList = o.SortedList;
+            Dictionary<int, float> sortedProductList;
+            if (_viewProductViewModel.DateRangeFrom != "" && _viewProductViewModel.DateRangeTo != "")
+            {
+                sortedProductList = o.Sort(_viewProductViewModel.DateRangeFrom, _viewProductViewModel.DateRangeTo);
+            }
+            else
+            {
+                sortedProductList = o.Sort();
+            }
 
             _productStore.ClearRecords();
 
@@ -67,15 +76,31 @@ namespace MemberManagementSystem.Commands
                 _sortedList = new Dictionary<int, float>();
             }
             public string Name => _name;
-            public abstract void Sort();
+            public abstract Dictionary<int, float> Sort(IEnumerable<Sales> sales);
 
-            public Dictionary<int, float> SortedList
+            public Dictionary<int, float> Sort()
             {
-                get
+                return Sort(_sBook.Records);
+            }
+            public Dictionary<int, float> Sort(String fDate, String tDate)
+            {
+                fDate += " 00:00:00"; tDate += " 00:00:00";
+                DateTime fromDate = DateTime.ParseExact(fDate, "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
+                DateTime toDate = DateTime.ParseExact(tDate, "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
+                return Sort(SalesInRange(fromDate, toDate));
+            }
+            protected IEnumerable<Sales> SalesInRange(DateTime fDate, DateTime tDate)
+            {
+                ObservableCollection<Sales> parsedSales = new ObservableCollection<Sales>();
+                foreach (Sales s in _sBook.Records)
                 {
-                    Sort();
-                    return _sortedList;
+                    DateTime salesDateTime = DateTime.Parse(s.DateTime);
+                    if (salesDateTime >= fDate && salesDateTime <= tDate)
+                    {
+                        parsedSales.Add(s);
+                    }
                 }
+                return parsedSales;
             }
         }
 
@@ -85,22 +110,23 @@ namespace MemberManagementSystem.Commands
             {
                 _name = "Most Revenue";
             }
-            public override void Sort()
+            public override Dictionary<int, float> Sort(IEnumerable<Sales> sales)
             {
                 _sortedList.Clear();
                 IEnumerable<Product> products = _pBook.Records;
 
                 foreach (Product p in products)
                 {
-                    _sortedList.Add(p.ID, Count(p.ID));
+                    _sortedList.Add(p.ID, Count(p.ID, sales));
                 }
 
                 _sortedList = _sortedList.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+                return _sortedList;
             }
 
-            public int Count(int pID)
+            public int Count(int pID, IEnumerable<Sales> sales)
             {
-                IEnumerable<Sales> sales = _sBook.Records;
+                
                 int count = 0;
 
                 foreach (Sales s in sales)
@@ -120,17 +146,18 @@ namespace MemberManagementSystem.Commands
             {
                 _name = "Least Revenue";
             }
-            public override void Sort()
+            public override Dictionary<int, float> Sort(IEnumerable<Sales> sales)
             {
                 _sortedList.Clear();
                 IEnumerable<Product> products = _pBook.Records;
 
                 foreach (Product p in products)
                 {
-                    _sortedList.Add(p.ID, Count(p.ID));
+                    _sortedList.Add(p.ID, Count(p.ID, sales));
                 }
 
                 _sortedList = _sortedList.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+                return _sortedList;
             }
         }
 
@@ -141,22 +168,23 @@ namespace MemberManagementSystem.Commands
                 _name = "Most Sales";
             }
 
-            public override void Sort()
+            public override Dictionary<int, float> Sort(IEnumerable<Sales> sales)
             {
                 IEnumerable<Product> products = _pBook.Records;
                 _sortedList.Clear();
 
                 foreach (Product p in products)
                 {
-                    _sortedList.Add(p.ID, Calculate(p.ID, p.Price));
+                    _sortedList.Add(p.ID, Calculate(p.ID, p.Price, sales));
                 }
 
                 _sortedList = _sortedList.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+                return _sortedList;
             }
 
-            public float Calculate(int pID, float pPrice)
+            public float Calculate(int pID, float pPrice, IEnumerable<Sales> sales)
             {
-                IEnumerable<Sales> sales = _sBook.Records;
+                
                 float revenue = 0;
 
                 foreach (Sales s in sales)
@@ -178,17 +206,18 @@ namespace MemberManagementSystem.Commands
                 _name = "Least Sales";
             }
 
-            public override void Sort()
+            public override Dictionary<int, float> Sort(IEnumerable<Sales> sales)
             {
                 IEnumerable<Product> products = _pBook.Records;
                 _sortedList.Clear();
 
                 foreach (Product p in products)
                 {
-                    _sortedList.Add(p.ID, Calculate(p.ID, p.Price));
+                    _sortedList.Add(p.ID, Calculate(p.ID, p.Price, sales));
                 }
 
                 _sortedList = _sortedList.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+                return _sortedList;
             }
         }
     }

@@ -21,10 +21,19 @@ namespace MemberManagementSystem.ViewModel
         public ICommand UpdateProductPage { get; }
         public ICommand ClearSearch { get; }
         public ICommand Sort { get; }
-        public ICommand Search { get; }
 
-        public String DateRangeFrom { get; }
-        public String DateRangeTo { get; }
+        private string _dateRangeFrom;
+        public String DateRangeFrom
+        {
+            get { return _dateRangeFrom; }
+            set { _dateRangeFrom = value; OnPropertyChanged(nameof(_dateRangeFrom)); }
+        }
+        private string _dateRangeTo;
+        public String DateRangeTo
+        {
+            get { return _dateRangeTo; }
+            set { _dateRangeTo = value; OnPropertyChanged(nameof(_dateRangeTo)); }
+        }
 
         public ICommand Export { get; }
 

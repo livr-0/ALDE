@@ -39,14 +39,13 @@
             <Button Grid.Row="0" Grid.Column="2" Content="Update" Command="{Binding UpdateProductPage}"/>
             <Label Grid.Row="0" Grid.Column="4"  Content="Sort by:"/>
             <ComboBox Grid.Column="5"  Width="100" ItemsSource="{Binding Options}" SelectedItem="{Binding Option}" DisplayMemberPath="Name"/>
-            <Button Grid.Row="0" Grid.Column="12" Content="Sort" Command="{Binding Sort}"/>
-            <Button Grid.Row="0" Grid.Column="18" Content="Clear" Command="{Binding ClearSearch}"/>
-            <Label Grid.Row="0" Grid.Column="13"  Content="From:"/>
-            <TextBox Grid.Row="0" Grid.Column="14" Text="{Binding DateRangeFrom, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
-            <Label Grid.Row="0" Grid.Column="15"  Content="To:"/>
-            <TextBox Grid.Row="0" Grid.Column="16" Text="{Binding DateRangeTo, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
-            <Button Grid.Row="0" Grid.Column="17" Content="Search" Command="{Binding Search}"/>
-            <Button Grid.Row="0" Grid.Column="19" Content="Export" Command="{Binding Export}"/>
+            <Button Grid.Row="0" Grid.Column="16" Content="Sort" Command="{Binding Sort}"/>
+            <Button Grid.Row="0" Grid.Column="17" Content="Clear" Command="{Binding ClearSearch}"/>
+            <Label Grid.Row="0" Grid.Column="12"  Content="From:"/>
+            <TextBox Grid.Row="0" Grid.Column="13" Text="{Binding DateRangeFrom, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+            <Label Grid.Row="0" Grid.Column="14"  Content="To:"/>
+            <TextBox Grid.Row="0" Grid.Column="15" Text="{Binding DateRangeTo, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+            <Button Grid.Row="0" Grid.Column="18" Content="Export" Command="{Binding Export}"/>
         </Grid>
         <ListView Grid.Row="1" ItemsSource="{Binding Products}">
             <ListView.View>

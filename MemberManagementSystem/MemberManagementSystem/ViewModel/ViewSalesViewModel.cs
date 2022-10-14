@@ -33,6 +33,18 @@ namespace MemberManagementSystem.ViewModel
         public ICommand ClearSearch { get; }
         public ICommand Search { get; }
         public ICommand Export { get; }
+        private string _dateRangeFrom;
+        public string DateRangeFrom
+        {
+            get { return _dateRangeFrom; }
+            set { _dateRangeFrom = value; OnPropertyChanged(nameof(DateRangeFrom)); }
+        }
+        private string _dateRangeTo;
+        public string DateRangeTo
+        {
+            get { return _dateRangeTo; }
+            set { _dateRangeTo = value; OnPropertyChanged(nameof(DateRangeTo)); }
+        }
 
         public ViewSalesViewModel(Book<Sales> salesBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory, Book<Member> memberBook, Book<Product> productBook)
         {

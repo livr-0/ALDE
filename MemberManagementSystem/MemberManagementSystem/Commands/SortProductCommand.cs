@@ -84,6 +84,11 @@ namespace MemberManagementSystem.Commands
             }
             public Dictionary<int, float> Sort(String fDate, String tDate)
             {
+                if (string.IsNullOrEmpty(fDate) || string.IsNullOrEmpty(tDate))
+                {
+                    fDate = "01/01/0001";
+                    tDate = "31/12/9999";
+                }
                 fDate += " 00:00:00"; tDate += " 00:00:00";
                 DateTime fromDate = DateTime.ParseExact(fDate, "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
                 DateTime toDate = DateTime.ParseExact(tDate, "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);

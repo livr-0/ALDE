@@ -23,6 +23,8 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0"  Content="Naviagtion Menu"/>
             <Button Grid.Row="0" Grid.Column="1" Content="Home" Command="{Binding HomePage}"/>
@@ -30,8 +32,12 @@
             <Button Grid.Row="0" Grid.Column="3" Content="Search" Command="{Binding Search}" />
             <Label Grid.Row="0" Grid.Column="4" Content="Member:"/>
             <TextBox Grid.Row="0" Grid.Column="5" Text="{Binding MemberSearch, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
-            <Button Grid.Row="0" Grid.Column="8" Content="Clear" Command="{Binding ClearSearch}"/>
-            <Button Grid.Row="0" Grid.Column="9" Content="Export" Command="{Binding Export}"/>
+            <Label Grid.Row="0" Grid.Column="6"  Content="From:"/>
+            <TextBox Grid.Row="0" Grid.Column="7" Text="{Binding DateRangeFrom, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+            <Label Grid.Row="0" Grid.Column="8"  Content="To:"/>
+            <TextBox Grid.Row="0" Grid.Column="9" Text="{Binding DateRangeTo, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+            <Button Grid.Row="0" Grid.Column="10" Content="Clear" Command="{Binding ClearSearch}"/>
+            <Button Grid.Row="0" Grid.Column="11" Content="Export" Command="{Binding Export}"/>
         </Grid>
         <ListView Grid.Row="2" ItemsSource="{Binding Sales}">
             <ListView.View>

@@ -4,9 +4,11 @@ using MemberManagementSystem.Stores;
 using MemberManagementSystem.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MemberManagementSystem.Commands.SortProductCommand;
 
 namespace MemberManagementSystem.Commands
 {
@@ -49,16 +51,48 @@ namespace MemberManagementSystem.Commands
 
         private void AddMembers(params int[] ids)
         {
+            string fDate = _viewSalesViewModel.DateRangeFrom;
+            string tDate = _viewSalesViewModel.DateRangeTo;
+            if(string.IsNullOrEmpty(fDate) || string.IsNullOrEmpty(tDate))
+            {
+                fDate = "01/01/0001";
+                tDate = "31/12/9999";
+            }
+            fDate += " 00:00:00"; tDate += " 00:00:00";
+            SimpleDateRange sorter = new SimpleDateRange(_salesBook);
+            IEnumerable<Sales> rangedSales = sorter.SortByDate(fDate, tDate);
+
+
             _salesStore.ClearRecords();
             foreach (int id in ids)
             {
-                IEnumerable<Sales> sales = _salesBook.Records.Where(s => s.MemberID == id);
+
+                IEnumerable<Sales> sales = rangedSales.Where(s => s.MemberID == id);
+                               
                 foreach (Sales sale in sales)
                 {
                     _salesStore.AddRecord(sale);
                     _salesStore.AddRecordViewModel(_factory.CreateRecordViewModel(sale));
                 }
             }
+        }
+    }
+
+    internal class SimpleDateRange : Option
+    {
+        public SimpleDateRange(Book<Sales> sBook) : base(null, sBook)
+        {
+        }
+
+        public IEnumerable<Sales> SortByDate(string fDate, string tDate)
+        {
+            DateTime fromDate = DateTime.ParseExact(fDate, "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
+            DateTime toDate = DateTime.ParseExact(tDate, "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
+            return SalesInRange(fromDate, toDate);
+        }
+        public override Dictionary<int, float> Sort(IEnumerable<Sales> sales)
+        {
+            throw new NotImplementedException();
         }
     }
 }

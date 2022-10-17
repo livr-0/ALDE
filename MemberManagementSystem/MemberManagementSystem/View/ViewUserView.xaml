@@ -9,7 +9,7 @@
     <Grid>
         <Grid.RowDefinitions>
         <RowDefinition Height="auto"/>
-        <RowDefinition Height="auto"/>
+        <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
     <Grid Grid.Row="0">
         <Grid.ColumnDefinitions>
@@ -20,6 +20,7 @@
         <Button Grid.Row="0" Grid.Column="1" Content="Home" Command="{Binding HomePage}"/>
         <Button Grid.Row="0" Grid.Column="1" Content="Update" Command="{Binding UpdateUserPage}" Margin="42,0,-43,0"/>
     </Grid>
+        <ScrollViewer Grid.Row="1">
     <ListView Grid.Row="1" ItemsSource="{Binding Users}">
         <ListView.View>
             <GridView>
@@ -54,5 +55,6 @@
             </GridView>
         </ListView.View>
     </ListView>
+        </ScrollViewer>
     </Grid>
 </UserControl>

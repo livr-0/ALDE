@@ -9,7 +9,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -39,6 +39,7 @@
             <Button Grid.Row="0" Grid.Column="10" Content="Clear" Command="{Binding ClearSearch}"/>
             <Button Grid.Row="0" Grid.Column="11" Content="Export" Command="{Binding Export}"/>
         </Grid>
+        <ScrollViewer Grid.Row="1">
         <ListView Grid.Row="2" ItemsSource="{Binding Sales}">
             <ListView.View>
                 <GridView>
@@ -93,6 +94,7 @@
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
-        </ListView>
+            </ListView>
+        </ScrollViewer>
     </Grid>
 </UserControl>

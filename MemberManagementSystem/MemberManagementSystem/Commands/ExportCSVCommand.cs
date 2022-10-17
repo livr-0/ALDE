@@ -40,11 +40,11 @@ namespace MemberManagementSystem.Commands
         public override void Execute(object? parameter)
         {
             String newFile = CreateFile();
-            StreamWriter fileWriter = new StreamWriter(newFile);
+            using StreamWriter fileWriter = new StreamWriter(File.Open(newFile, FileMode.CreateNew));
             string header = (string)typeof(T).GetMethod("GetHeader").Invoke(null, new object[] { });
             fileWriter.WriteLine(_fileTitle);
             fileWriter.WriteLine(header);
-            
+
             foreach (T r in _recordStore.Records)
             {
                 fileWriter.WriteLine("" + r.ToString());

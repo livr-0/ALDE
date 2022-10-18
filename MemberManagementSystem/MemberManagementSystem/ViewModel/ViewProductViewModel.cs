@@ -23,8 +23,8 @@ namespace MemberManagementSystem.ViewModel
         public ICommand Sort { get; }
         public ICommand Search { get; }
 
-        public String DateRangeFrom { get; }
-        public String DateRangeTo { get; }
+        public String DateRangeFrom { get; set; }
+        public String DateRangeTo { get; set; }
 
         public ICommand Export { get; }
 

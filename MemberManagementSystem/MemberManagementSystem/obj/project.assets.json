@@ -8,23 +8,23 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Andy\\.nuget\\packages\\": {}
+    "C:\\Users\\linhv\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andy\\Documents\\sWINBURNE sOFTWARE eNG\\Year 2 Semester 2\\SWE20001 Managing Software Projects\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
+      "projectUniqueName": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
       "projectName": "MemberManagementSystem",
-      "projectPath": "C:\\Users\\Andy\\Documents\\sWINBURNE sOFTWARE eNG\\Year 2 Semester 2\\SWE20001 Managing Software Projects\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
-      "packagesPath": "C:\\Users\\Andy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andy\\Documents\\sWINBURNE sOFTWARE eNG\\Year 2 Semester 2\\SWE20001 Managing Software Projects\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\",
+      "projectPath": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
+      "packagesPath": "C:\\Users\\linhv\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Andy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\linhv\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows7.0"
+        "net6.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -51,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -63,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

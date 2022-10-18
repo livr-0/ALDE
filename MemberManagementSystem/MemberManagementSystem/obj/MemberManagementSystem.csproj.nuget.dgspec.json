@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\jayde\\source\\repos\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj": {}
   },
   "projects": {
@@ -12,13 +13,30 @@
         "projectPath": "C:\\Users\\jayde\\source\\repos\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
         "packagesPath": "C:\\Users\\jayde\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\jayde\\source\\repos\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\",
+=======
+    "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
+        "projectName": "MemberManagementSystem",
+        "projectPath": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
+        "packagesPath": "C:\\Users\\linhv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\",
+>>>>>>> acc293f43b0b0454c70e4adf81f7ad9f645afb93
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\jayde\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+          "C:\\Users\\linhv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> acc293f43b0b0454c70e4adf81f7ad9f645afb93
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -4,15 +4,26 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\
+=======
+C:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\
+>>>>>>> acc293f43b0b0454c70e4adf81f7ad9f645afb93
 MemberManagementSystem
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+<<<<<<< HEAD
 C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\App.xaml
 15-1783167015
 
 612019830714
+=======
+C:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\App.xaml
+15-1783167015
+
+61552204327
+>>>>>>> acc293f43b0b0454c70e4adf81f7ad9f645afb93
 194-1103864946
 MainWindow.xaml;View\AddMemberView.xaml;View\AddProductView.xaml;View\AddSalesView.xaml;View\AddUserView.xaml;View\HomeView.xaml;View\LoginView.xaml;View\UpdateMemberView.xaml;View\UpdateProductView.xaml;View\UpdateSalesView.xaml;View\UpdateUserView.xaml;View\ViewMemberView.xaml;View\ViewProductView.xaml;View\ViewSalesView.xaml;View\ViewUserView.xaml;
 

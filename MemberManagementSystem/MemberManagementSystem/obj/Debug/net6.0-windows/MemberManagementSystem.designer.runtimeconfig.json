@@ -12,9 +12,14 @@
       }
     ],
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "C:\\Users\\jayde\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\jayde\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+=======
+      "C:\\Users\\linhv\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\linhv\\.nuget\\packages"
+>>>>>>> acc293f43b0b0454c70e4adf81f7ad9f645afb93
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

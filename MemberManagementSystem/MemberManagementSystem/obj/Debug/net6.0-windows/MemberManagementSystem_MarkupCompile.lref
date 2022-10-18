@@ -1,5 +1,6 @@
 ﻿
 
+<<<<<<< HEAD
 FC:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\MainWindow.xaml;;
 FC:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\View\AddMemberView.xaml;;
 FC:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\View\AddProductView.xaml;;
@@ -15,4 +16,21 @@ FC:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\
 FC:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\View\ViewProductView.xaml;;
 FC:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\View\ViewSalesView.xaml;;
 FC:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\View\ViewUserView.xaml;;
+=======
+FC:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\MainWindow.xaml;;
+FC:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\View\AddMemberView.xaml;;
+FC:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\View\AddProductView.xaml;;
+FC:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\View\AddSalesView.xaml;;
+FC:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\View\AddUserView.xaml;;
+FC:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\View\HomeView.xaml;;
+FC:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\View\LoginView.xaml;;
+FC:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\View\UpdateMemberView.xaml;;
+FC:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\View\UpdateProductView.xaml;;
+FC:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\View\UpdateSalesView.xaml;;
+FC:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\View\UpdateUserView.xaml;;
+FC:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\View\ViewMemberView.xaml;;
+FC:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\View\ViewProductView.xaml;;
+FC:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\View\ViewSalesView.xaml;;
+FC:\Users\linhv\Source\Repos\livr-0\ALDE\MemberManagementSystem\MemberManagementSystem\View\ViewUserView.xaml;;
+>>>>>>> acc293f43b0b0454c70e4adf81f7ad9f645afb93
 

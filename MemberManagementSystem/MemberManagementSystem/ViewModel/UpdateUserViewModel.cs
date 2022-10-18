@@ -1,6 +1,7 @@
 ﻿using MemberManagementSystem.Commands;
 using MemberManagementSystem.Model;
 using MemberManagementSystem.Service;
+using MemberManagementSystem.Stores;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -139,14 +140,14 @@ namespace MemberManagementSystem.ViewModel
             }
         }
 
-        public UpdateUserViewModel(Book<User> userBook, NavigateService navService)
+        public UpdateUserViewModel(Book<User> userBook, NavigateService navService, UserStore userStore)
         {
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
             _userBook = userBook;
             _users = new ObservableCollection<UserViewModel>();
             GatherUserViews(userBook);
             AlterUser = new UpdateRecordCommand<User>(userBook, UpdateUser);
-            DeleteUser = new RemoveRecordCommand<User>(userBook, RemoveUser);
+            DeleteUser = new RemoveRecordCommand<User>(userBook, RemoveUser, userStore);
             Positions = new List<User.StaffPosition>() { User.StaffPosition.Staff, User.StaffPosition.Manager, User.StaffPosition.Owner };
         }
 

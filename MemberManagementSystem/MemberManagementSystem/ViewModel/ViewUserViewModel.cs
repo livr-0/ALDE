@@ -22,10 +22,10 @@ namespace MemberManagementSystem.ViewModel
         public ICommand UpdateUserPage { get; }
         public ICommand ClearSearch { get; }
 
-        public ViewUserViewModel(Book<User> userBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory)
+        public ViewUserViewModel(Book<User> userBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory, UserStore userStore)
         {
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
-            UpdateUserPage = new NavigateCommand(navService, nameof(UpdateUserViewModel));
+            UpdateUserPage = new NavigateCommand(navService, nameof(UpdateUserViewModel), userStore, User.StaffPosition.Owner);
             _userStore = new RecordViewModelStore();
             _userBook = userBook;
             ClearSearch = new ResetRecordViewStoreCommand<User>(_userStore, _userBook, recordViewModelFactory);

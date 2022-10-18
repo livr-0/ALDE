@@ -1,4 +1,5 @@
 ﻿using MemberManagementSystem.Model;
+using MemberManagementSystem.Stores;
 using MemberManagementSystem.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace MemberManagementSystem.Service
         private Book<Sales> _salesBook;
         private readonly Book<User> _userBook;
         private RecordViewModelFactory _recordViewModelFactory;
+        private UserStore _userStore;
 
         /// <summary>
         /// Any paramters that may be needed for a new viewmodel needto be passed into ViewModelFacotryConstructed
@@ -32,6 +34,7 @@ namespace MemberManagementSystem.Service
             _salesBook = salesBook;
             _userBook = userBook;
             _recordViewModelFactory = new RecordViewModelFactory(memberBook, productBook, salesBook, userBook);
+            _userStore = new UserStore();
         }
 
         /// <summary>
@@ -70,70 +73,77 @@ namespace MemberManagementSystem.Service
                     return CreateUpdateMemberViewModel();
                 case nameof(UpdateUserViewModel):
                     return CreateUpdateUserViewModel();
+                case nameof(LoginViewModel):
+                    return CreateLoginViewModel();
             }
 
             throw new ArgumentException(String.Format("{0} is not a type of creatable viewmodel", viewModelName));
         }
 
+        private ViewModelBase CreateLoginViewModel()
+        {
+            return new LoginViewModel(_navService, _userBook, _userStore);
+        }
+
         private ViewModelBase CreateUpdateUserViewModel()
         {
-            return new UpdateUserViewModel(_userBook, _navService);
+            return new UpdateUserViewModel(_userBook, _navService, _userStore);
         }
 
         private ViewModelBase CreateViewUserViewModel()
         {
-            return new ViewUserViewModel(_userBook,_navService,_recordViewModelFactory);
+            return new ViewUserViewModel(_userBook,_navService,_recordViewModelFactory, _userStore);
         }
 
         private ViewModelBase CreateAdduserViewModel()
         {
-           return new AddUserViewModel(_navService,_userBook);
+           return new AddUserViewModel(_navService,_userBook, _userStore);
         }
 
         private ViewModelBase CreateViewSalesViewModel()
         {
-            return new ViewSalesViewModel(_salesBook, _navService, _recordViewModelFactory, _memberBook, _productBook);
+            return new ViewSalesViewModel(_salesBook, _navService, _recordViewModelFactory, _memberBook, _productBook, _userStore);
         }
         private ViewModelBase CreateViewMemberViewModel()
         {
-            return new ViewMemberViewModel(_memberBook, _navService, _recordViewModelFactory);
+            return new ViewMemberViewModel(_memberBook, _navService, _recordViewModelFactory, _userStore);
         }
 
         private ViewModelBase CreateViewProductViewModel()
         {
-            return new ViewProductViewModel(_salesBook, _productBook, _navService, _recordViewModelFactory);
+            return new ViewProductViewModel(_salesBook, _productBook, _navService, _recordViewModelFactory, _userStore);
         }
 
         private ViewModelBase CreateAddMemberViewModel()
         {
-            return new AddMemberViewModel(_navService, _memberBook);
+            return new AddMemberViewModel(_navService, _memberBook, _userStore);
         }
         private ViewModelBase CreateAddProductViewModel()
         {
-            return new AddProductViewModel(_navService, _productBook);
+            return new AddProductViewModel(_navService, _productBook, _userStore);
         }
 
         private ViewModelBase CreateAddSalesViewModel() {
-            return new AddSalesViewModel(_navService, _salesBook, _productBook, _memberBook);
+            return new AddSalesViewModel(_navService, _salesBook, _productBook, _memberBook, _userStore);
         }
 
         private ViewModelBase CreateUpdateProductViewModel()
         {
-            return new UpdateProductViewModel(_productBook, _navService);
+            return new UpdateProductViewModel(_productBook, _navService, _userStore);
         }
 
         private ViewModelBase CreateUpdateSalesViewModel()
         {
-            return new UpdateSalesViewModel(_salesBook, _navService, _productBook, _memberBook);
+            return new UpdateSalesViewModel(_salesBook, _navService, _productBook, _memberBook, _userStore);
         }
         private ViewModelBase CreateUpdateMemberViewModel()
         {
-            return new UpdateMemberViewModel(_memberBook, _navService);
+            return new UpdateMemberViewModel(_memberBook, _navService, _userStore);
         }
 
         private ViewModelBase CreateHomeViewModel()
         {
-            return new HomeViewModel(_navService);
+            return new HomeViewModel(_navService, _userStore);
         }
     }
 }

@@ -26,8 +26,6 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0"  Content="Naviagtion Menu"/>
-            <Button Grid.Row="0" Grid.Column="1" Content="Home" Command="{Binding HomePage}"/>
         </Grid>
         <Label Grid.Row="1" Content="Log In"/>
         <Grid Grid.Row="3">

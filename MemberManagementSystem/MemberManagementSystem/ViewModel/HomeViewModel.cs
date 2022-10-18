@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using MemberManagementSystem.Commands;
+using MemberManagementSystem.Model;
 using MemberManagementSystem.Service;
+using MemberManagementSystem.Stores;
 using static System.Net.WebRequestMethods;
 
 namespace MemberManagementSystem.ViewModel
@@ -29,18 +31,23 @@ namespace MemberManagementSystem.ViewModel
         public ICommand ViewSalesPage { get; }
         public ICommand ViewProductPage { get; }
         public ICommand ViewUserPage { get; }
-        public HomeViewModel(NavigateService navService)
+
+        public ICommand Logout { get;  }
+
+        public HomeViewModel(NavigateService navService, UserStore userStore)
         {
             _userManualURL = "http://docs.google.com/document/d/e/2PACX-1vRYjZd2a218nfu8J-17-BgB_KSo5vXImL36_Yuk0j0LsChp7y5l2x1z-CxWExTkM1Q3f7x2tzNydnlM/pub";
             AddMemberPage = new NavigateCommand(navService, nameof(AddMemberViewModel));
             AddSalesPage = new NavigateCommand(navService, nameof(AddSalesViewModel));
             AddProductPage = new NavigateCommand(navService, nameof(AddProductViewModel));
-            AddUserPage = new NavigateCommand(navService, nameof(AddUserViewModel));
+            AddUserPage = new NavigateCommand(navService, nameof(AddUserViewModel), userStore, User.StaffPosition.Owner);
 
             ViewMemberPage = new NavigateCommand(navService, nameof(ViewMemberViewModel));
             ViewSalesPage = new NavigateCommand(navService, nameof(ViewSalesViewModel));
             ViewProductPage = new NavigateCommand(navService, nameof(ViewProductViewModel));
-            ViewUserPage = new NavigateCommand(navService, nameof(ViewUserViewModel));
+            ViewUserPage = new NavigateCommand(navService, nameof(ViewUserViewModel), userStore, User.StaffPosition.Owner, User.StaffPosition.Manager);
+
+            Logout = new NavigateCommand(navService, nameof(LoginViewModel));
 
             OpenUserManual = new OpenURLCommand(UserManualURL);
         }

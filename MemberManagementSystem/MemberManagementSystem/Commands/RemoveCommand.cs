@@ -1,4 +1,5 @@
 ﻿using MemberManagementSystem.Model;
+using MemberManagementSystem.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,18 @@ namespace MemberManagementSystem.Commands
     {
         private readonly Book<T> _book;
         private readonly Action _removeRecord;
+        private readonly UserStore _userStore;
 
-        public RemoveRecordCommand(Book<T> book, Action removeRecord)
+        public RemoveRecordCommand(Book<T> book, Action removeRecord, UserStore userStore)
         {
             _book = book;
             _removeRecord = removeRecord;
+            _userStore = userStore;
+        }
+
+        public override bool CanExecute(object? parameter)
+        {
+            return _userStore.Position == User.StaffPosition.Manager || _userStore.Position == User.StaffPosition.Owner;
         }
 
         public override void Execute(object? parameter)

@@ -38,7 +38,7 @@ namespace MemberManagementSystem.ViewModel
             set { _option = value; OnPropertyChanged(nameof(Option)); }
         }
 
-        public ViewProductViewModel(Book<Sales> s, Book<Product> productBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory)
+        public ViewProductViewModel(Book<Sales> s, Book<Product> productBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory, UserStore userStore)
         {
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
             UpdateProductPage = new NavigateCommand(navService, nameof(UpdateProductViewModel));

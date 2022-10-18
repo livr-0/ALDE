@@ -20,7 +20,7 @@ namespace MemberManagementSystem.ViewModel
         public ICommand UpdateMemberPage { get; }
         public ICommand ClearSearch { get; }
 
-        public ViewMemberViewModel(Book<Member> memberBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory)
+        public ViewMemberViewModel(Book<Member> memberBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory, UserStore userStore)
         {
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
             UpdateMemberPage = new NavigateCommand(navService, nameof(UpdateMemberViewModel));

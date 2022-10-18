@@ -11,9 +11,7 @@ namespace MemberManagementSystem.ViewModel
     internal class LoginViewModel : ViewModelBase
     {
         private Book<User> _userBook;
-
         private string _username;
-        private UserStore _store;
         public string Username
         {
             get { return _username; }
@@ -28,14 +26,12 @@ namespace MemberManagementSystem.ViewModel
             set { _password = value; OnPropertyChanged(nameof(Password)); }
         }
         public UserStore Store { get;}
-        public Book<User> Userbook { get; } 
 
-        public LoginViewModel(NavigateService navService, Book<User> userBook, UserStore store)
+        public LoginViewModel(NavigateService navService, Book<User> userBook,UserStore userStore)
         {
             _userBook = userBook;
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
-            _store = store;
-            AttemptLogin = new AttemptLogin(Store, Userbook, this, new NavigateCommand(navService, nameof(HomeViewModel))); //needs to rework NavigateCommand to have account, or find way to store user in main window otherwise.
+            AttemptLogin = new AttemptLogin(userStore, _userBook, this, new NavigateCommand(navService, nameof(HomeViewModel))); //needs to rework NavigateCommand to have account, or find way to store user in main window otherwise.
         }
         public ICommand HomePage { get; }
         public ICommand AttemptLogin { get; }

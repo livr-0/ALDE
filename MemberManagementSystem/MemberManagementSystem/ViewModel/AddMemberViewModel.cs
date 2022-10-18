@@ -3,6 +3,7 @@ using MemberManagementSystem.Model;
 using MemberManagementSystem.Service;
 using System.Windows.Input;
 using System.Text.RegularExpressions;
+using MemberManagementSystem.Stores;
 
 namespace MemberManagementSystem.ViewModel
 {
@@ -90,7 +91,7 @@ namespace MemberManagementSystem.ViewModel
             set { _submitMsgColor = value; OnPropertyChanged(nameof(SubmitMsgColor)); }
         }
 
-        public AddMemberViewModel(NavigateService navService, Book<Member> memberBook)
+        public AddMemberViewModel(NavigateService navService, Book<Member> memberBook, UserStore userStore)
         {
             _memberBook = memberBook;
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));

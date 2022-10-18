@@ -70,7 +70,7 @@ namespace MemberManagementSystem
         protected override void OnStartup(StartupEventArgs e)
         {
 
-            _navService.Navigate(nameof(HomeViewModel));
+            _navService.Navigate(nameof(LoginViewModel));
             MainWindow mainWindow = new MainWindow();
             mainWindow.DataContext = new MainViewModel(_navStore);
             mainWindow.WindowClosing += AppExiting;

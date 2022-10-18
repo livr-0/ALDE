@@ -1,6 +1,7 @@
 using MemberManagementSystem.Commands;
 using MemberManagementSystem.Model;
 using MemberManagementSystem.Service;
+using MemberManagementSystem.Stores;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -63,7 +64,7 @@ namespace MemberManagementSystem.ViewModel
             }
         }
 
-        public UpdateSalesViewModel(Book<Sales> salesBook, NavigateService navService, Book<Product> productBook, Book<Member> memberBook)
+        public UpdateSalesViewModel(Book<Sales> salesBook, NavigateService navService, Book<Product> productBook, Book<Member> memberBook, UserStore userStore)
         {
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
             _salesBook = salesBook;
@@ -72,7 +73,7 @@ namespace MemberManagementSystem.ViewModel
             _sales = new ObservableCollection<SalesViewModel>();
             GatherSalesViews(salesBook);
             AlterSales = new UpdateRecordCommand<Sales>(salesBook, UpdateSales);
-            DeleteSales = new RemoveRecordCommand<Sales>(salesBook, RemoveSales);
+            DeleteSales = new RemoveRecordCommand<Sales>(salesBook, RemoveSales, userStore);
         }
 
         private void GatherSalesViews(Book<Sales> salesBook)

@@ -1,6 +1,7 @@
 ﻿using MemberManagementSystem.Commands;
 using MemberManagementSystem.Model;
 using MemberManagementSystem.Service;
+using MemberManagementSystem.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -121,7 +122,7 @@ namespace MemberManagementSystem.ViewModel
         public IEnumerable<User.StaffPosition> Positions { get; }
 
 
-        public AddUserViewModel(NavigateService navService, Book<User> userBook)
+        public AddUserViewModel(NavigateService navService, Book<User> userBook, UserStore userStore)
         {
             _userBook = userBook;
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));

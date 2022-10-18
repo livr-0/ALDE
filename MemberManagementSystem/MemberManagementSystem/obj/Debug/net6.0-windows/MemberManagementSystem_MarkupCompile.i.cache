@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\
+C:\Users\harry\Programming\GitHub\ALDE\MemberManagementSystem\MemberManagementSystem\obj\Debug\net6.0-windows\
 MemberManagementSystem
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\jayde\source\repos\ALDE\MemberManagementSystem\MemberManagementSystem\App.xaml
+C:\Users\harry\Programming\GitHub\ALDE\MemberManagementSystem\MemberManagementSystem\App.xaml
 15-1783167015
 
 65-1416464335
-194-1103864946
+194-97651837
 MainWindow.xaml;View\AddMemberView.xaml;View\AddProductView.xaml;View\AddSalesView.xaml;View\AddUserView.xaml;View\HomeView.xaml;View\LoginView.xaml;View\UpdateMemberView.xaml;View\UpdateProductView.xaml;View\UpdateSalesView.xaml;View\UpdateUserView.xaml;View\ViewMemberView.xaml;View\ViewProductView.xaml;View\ViewSalesView.xaml;View\ViewUserView.xaml;
 
 True

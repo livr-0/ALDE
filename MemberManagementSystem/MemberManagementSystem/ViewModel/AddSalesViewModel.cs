@@ -1,6 +1,7 @@
 ﻿using MemberManagementSystem.Commands;
 using MemberManagementSystem.Model;
 using MemberManagementSystem.Service;
+using MemberManagementSystem.Stores;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -130,7 +131,7 @@ namespace MemberManagementSystem.ViewModel
             set { _submitMsgColor = value; OnPropertyChanged(nameof(SubmitMsgColor)); }
         }
 
-        public AddSalesViewModel(NavigateService navService, Book<Sales> salesBook, Book<Product> productBook, Book<Member> memberBook)
+        public AddSalesViewModel(NavigateService navService, Book<Sales> salesBook, Book<Product> productBook, Book<Member> memberBook, UserStore userStore)
         {
             _salesBook = salesBook;
             _productBook = productBook;

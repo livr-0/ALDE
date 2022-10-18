@@ -34,7 +34,7 @@ namespace MemberManagementSystem.ViewModel
         public ICommand Search { get; }
         public ICommand Export { get; }
 
-        public ViewSalesViewModel(Book<Sales> salesBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory, Book<Member> memberBook, Book<Product> productBook)
+        public ViewSalesViewModel(Book<Sales> salesBook, NavigateService navService, RecordViewModelFactory recordViewModelFactory, Book<Member> memberBook, Book<Product> productBook, UserStore userStore)
         {
             _salesStore = new RecordViewModelStore();
             _salesBook = salesBook;

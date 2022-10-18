@@ -1,14 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "mYkG64UHH2lGbrBXuISYXPJlxSmS15RT/yqiKoT0ZMnBivorp8ciw5x7VeLdo1Z/srpUlbwbuuCgnfsytnOH/A==",
+  "dgSpecHash": "1miezMB/yq5VeIUEkqzbm/ab+Av+Kwfyyna4lNIpFMA/b9ljAfHzVnQ3qqEUEUD9s08XSm1ajS2gCELZeZaxVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jayde\\source\\repos\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
-=======
-  "dgSpecHash": "xU+8f0+rbDF9FWikFubKRy9U1h26nVDxnFuUkZmJZxPFaR5Jn4ZC7ACb28KO1Y+W9rucol3TcHBr05OvtbtMww==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
->>>>>>> acc293f43b0b0454c70e4adf81f7ad9f645afb93
+  "projectFilePath": "C:\\Users\\harry\\Programming\\GitHub\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\harry\\Programming\\GitHub\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

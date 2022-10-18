@@ -1,4 +1,5 @@
 ﻿using MemberManagementSystem.Model;
+using MemberManagementSystem.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -8,44 +8,28 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\jayde\\.nuget\\packages\\": {},
+    "C:\\Users\\harry\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
-=======
-    "C:\\Users\\linhv\\.nuget\\packages\\": {}
->>>>>>> acc293f43b0b0454c70e4adf81f7ad9f645afb93
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\jayde\\source\\repos\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
+      "projectUniqueName": "C:\\Users\\harry\\Programming\\GitHub\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
       "projectName": "MemberManagementSystem",
-      "projectPath": "C:\\Users\\jayde\\source\\repos\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
-      "packagesPath": "C:\\Users\\jayde\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jayde\\source\\repos\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
-      "projectName": "MemberManagementSystem",
-      "projectPath": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
-      "packagesPath": "C:\\Users\\linhv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\linhv\\Source\\Repos\\livr-0\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\",
->>>>>>> acc293f43b0b0454c70e4adf81f7ad9f645afb93
+      "projectPath": "C:\\Users\\harry\\Programming\\GitHub\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
+      "packagesPath": "C:\\Users\\harry\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\harry\\Programming\\GitHub\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
-        "C:\\Users\\jayde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\harry\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-        "C:\\Users\\linhv\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> acc293f43b0b0454c70e4adf81f7ad9f645afb93
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -72,8 +56,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -85,8 +68,16 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\harry\\Programming\\GitHub\\ALDE\\MemberManagementSystem\\MemberManagementSystem\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

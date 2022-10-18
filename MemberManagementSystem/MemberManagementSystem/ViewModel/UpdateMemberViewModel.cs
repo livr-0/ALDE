@@ -1,6 +1,7 @@
 ﻿using MemberManagementSystem.Commands;
 using MemberManagementSystem.Model;
 using MemberManagementSystem.Service;
+using MemberManagementSystem.Stores;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -122,14 +123,14 @@ namespace MemberManagementSystem.ViewModel
                 updateTextBoxes(); OnPropertyChanged("SelectedMember"); }
         }
 
-        public UpdateMemberViewModel(Book<Member> memberBook, NavigateService navService)
+        public UpdateMemberViewModel(Book<Member> memberBook, NavigateService navService, UserStore userStore)
         {
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
             _memberBook = memberBook;
             _member = new ObservableCollection<MemberViewModel>();
             GatherMemberViews(memberBook);
             AlterMember = new UpdateRecordCommand<Member>(memberBook, UpdateMember);
-            DeleteMember = new RemoveRecordCommand<Member>(memberBook, RemoveMember);
+            DeleteMember = new RemoveRecordCommand<Member>(memberBook, RemoveMember, userStore);
         }
 
         private void GatherMemberViews(Book<Member> memberBook)

@@ -5,6 +5,7 @@ using System;
 using System.Windows.Input;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using MemberManagementSystem.Stores;
 
 namespace MemberManagementSystem.ViewModel
 {
@@ -116,7 +117,7 @@ namespace MemberManagementSystem.ViewModel
             set { _submitMsgColor = value; OnPropertyChanged(nameof(SubmitMsgColor)); }
         }
 
-        public AddProductViewModel(NavigateService navService, Book<Product> productBook)
+        public AddProductViewModel(NavigateService navService, Book<Product> productBook, UserStore userStore)
         {
             _productBook = productBook;
             HomePage = new NavigateCommand(navService, nameof(HomeViewModel));
